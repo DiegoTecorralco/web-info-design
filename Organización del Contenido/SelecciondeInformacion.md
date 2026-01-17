@@ -1,11 +1,60 @@
 ## Página de inicio
-Contenido a incluir:
 
-La página de inicio de Tecommers tiene como función introducir al usuario a la empresa y al sector del e-commerce. En esta sección se explica de forma general qué es Tecommers, a qué se dedica y cuál es su enfoque dentro del comercio electrónico. Además, se presenta un mensaje institucional que comunica la importancia de las soluciones digitales en los negocios actuales, así como un resumen de los principales servicios que ofrece la empresa. Esta información es relevante porque permite al usuario identificar rápidamente el propósito del sitio y decidir si el contenido es de su interés.
+**Contenido a incluir:**
+
+- Logo y menú de navegación (categorías, ofertas, contacto, cuenta)
+
+- Banner principal con promociones destacadas
+
+- Buscador de productos
+
+- Productos destacados o más vendidos
+
+- Categorías principales
+
+- Llamados a la acción (Comprar ahora, Ver ofertas)
+
+- Opiniones o valoraciones destacadas
+
+- Footer con políticas, métodos de pago y redes sociales
+
+**Justificación**
+La página de inicio debe captar la atención del usuario de inmediato y permitirle encontrar productos rápidamente. El buscador y las categorías facilitan la exploración, mientras que las promociones y productos destacados incentivan la compra. Mostrar métodos de pago y políticas desde el inicio genera confianza y reduce el abandono del sitio.
 
 ## Página de servicios 
-La página de servicios describe detalladamente las soluciones que ofrece Tecommers en el ámbito del comercio electrónico. En esta sección se informa sobre el desarrollo de plataformas e-commerce, la implementación de catálogos digitales, la integración de métodos de pago, la gestión de envíos y la optimización de la experiencia del usuario. También se explica el acompañamiento y asesoría que brinda la empresa para ayudar a negocios a comprender y adoptar el comercio electrónico. Esta información es relevante porque permite al usuario conocer el alcance de los servicios de Tecommers y entender cómo la empresa contribuye al crecimiento digital de los negocios.
-## Página "Nosotros"
-La página “Nosotros” presenta la identidad institucional de Tecommers. En esta sección se expone la misión, que consiste en brindar soluciones de comercio electrónico claras, accesibles y eficientes que impulsen la transformación digital de las empresas. La visión de Tecommers es consolidarse como una empresa referente en el desarrollo y asesoría de plataformas e-commerce, reconocida por su innovación y compromiso con la calidad. Los valores que guían a la empresa incluyen la responsabilidad, la transparencia, la innovación, el compromiso con el cliente y la mejora continua. Esta información es relevante porque permite al usuario conocer los principios que rigen a la empresa y genera confianza en su trabajo.
 
-En conjunto, la selección de información de la página informativa de Tecommers está orientada a ofrecer contenido claro, estructurado y confiable, que permita al usuario comprender la identidad de la empresa, sus servicios y su impacto en el comercio electrónico, fortaleciendo la credibilidad y el valor informativo del sitio.
+**Contenido a incluir:**
+
+- Servicio de compra en línea
+
+- Métodos de pago disponibles
+
+- Opciones de envío y tiempos de entrega
+
+- Políticas de devolución y garantía
+
+- Atención al cliente y soporte
+
+- Seguridad de datos y pagos
+
+**Justificación**
+En un e-commerce, los servicios respaldan la experiencia de compra. Informar claramente sobre pagos, envíos y devoluciones reduce la incertidumbre del usuario y responde a las preguntas más comunes antes de comprar. La información sobre seguridad y soporte genera confianza y credibilidad en la plataforma.
+
+## Página "Nosotros"
+
+**Contenido a incluir:**
+
+- Historia de la tienda en línea
+
+- Misión, visión y valores
+
+- Compromiso con la calidad y el cliente
+
+- Información del equipo o empresa
+
+- Certificaciones o sellos de confianza
+
+- Canales de contacto
+
+**Justificación**
+La página "Nosotros" permite al usuario conocer quién está detrás de la tienda, lo cual es clave en el comercio electrónico. Mostrar valores, compromiso y transparencia ayuda a construir confianza, especialmente en usuarios nuevos que aún no conocen la marca.
