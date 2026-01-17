@@ -19,6 +19,7 @@
 - Footer con políticas, métodos de pago y redes sociales
 
 **Justificación**
+    
 La página de inicio debe captar la atención del usuario de inmediato y permitirle encontrar productos rápidamente. El buscador y las categorías facilitan la exploración, mientras que las promociones y productos destacados incentivan la compra. Mostrar métodos de pago y políticas desde el inicio genera confianza y reduce el abandono del sitio.
 
 ## Página de servicios 
@@ -38,6 +39,7 @@ La página de inicio debe captar la atención del usuario de inmediato y permiti
 - Seguridad de datos y pagos
 
 **Justificación**
+
 En un e-commerce, los servicios respaldan la experiencia de compra. Informar claramente sobre pagos, envíos y devoluciones reduce la incertidumbre del usuario y responde a las preguntas más comunes antes de comprar. La información sobre seguridad y soporte genera confianza y credibilidad en la plataforma.
 
 ## Página "Nosotros"
@@ -57,4 +59,5 @@ En un e-commerce, los servicios respaldan la experiencia de compra. Informar cla
 - Canales de contacto
 
 **Justificación**
+
 La página "Nosotros" permite al usuario conocer quién está detrás de la tienda, lo cual es clave en el comercio electrónico. Mostrar valores, compromiso y transparencia ayuda a construir confianza, especialmente en usuarios nuevos que aún no conocen la marca.
