@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Tecommers - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body class="body">
+    <!-- ================= NAVBAR PRINCIPAL ================= -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 160 120">
+                    <path d="M10 20H80L65 50H45L30 110H10L25 50H10V20Z" fill="#cf2e2e"/>
+                    <path d="M50 55H78L75 73H47L50 55Z" fill="black"/>
+                    <path d="M43 85H71L68 103H40L43 85Z" fill="#cf2e2e"/>
+                </svg>
+                <span class="logo-text">TECOMMERS</span>
+            </div>
+
+            <nav class="nav">
+                <a href="homePage.html" class="nav-link active">Home</a>
+                <a href="category.html" class="nav-link">Categorías</a>
+                <a href="offer.html" class="nav-link">Ofertas</a>
+                <a href="ourServices.html" class="nav-link">Servicios</a>
+                <a href="our.html" class="nav-link">Nosotros</a>
+            </nav>
+
+            <div class="icon-container">
+                <button class="icon-button">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </button>
+                <button class="icon-button">
+                    <span class="material-symbols-outlined">person</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- ================= FIN NAVBAR ================= -->
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero">
+        <div class="hero-banner"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Todo lo que necesitas, <br class="hero-break"/>
+                <span class="hero-highlight">en un solo lugar</span>
+            </h1>
+            <p class="hero-subtitle">
+                Descubre nuestra selección exclusiva de productos con envíos a todo el país.
+            </p>
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-icon">
+                        <span class="material-symbols-outlined">search</span>
+                    </div>
+                    <input class="search-input" placeholder="Buscar productos, marcas y más..." type="text"/>
+                    <button class="search-button">
+                        Buscar
+                    </button>
+                </div>
+                <div class="category-links">
+                    <a class="category-link" href="#">Electrónica</a>
+                    <span class="category-dot"></span>
+                    <a class="category-link" href="#">Moda</a>
+                    <span class="category-dot"></span>
+                    <a class="category-link" href="#">Hogar</a>
+                    <span class="category-dot"></span>
+                    <a class="category-link" href="#">Deportes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CATEGORÍAS SECTION ================= -->
+    <main class="main">
+        <div class="section-header">
+            <div>
+                <p class="section-subtitle">Explorar</p>
+                <h2 class="section-title">Nuestras Categorías</h2>
+            </div>
+            <a class="section-link" href="#">
+                Ver todas <span class="material-symbols-outlined section-link-icon">arrow_forward_ios</span>
+            </a>
+        </div>
+        <div class="categories-grid">
+            <!-- Tecnología -->
+            <div class="category-card">
+                <div class="category-image-container">
+                    <img alt="Tecnología" class="category-image" 
+                         src="https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"/>
+                    <div class="category-overlay"></div>
+                </div>
+                <h3 class="category-title">Tecnología</h3>
+                <p class="category-description">Más de 500 productos</p>
+            </div>
+            
+            <!-- Electrodomésticos -->
+            <div class="category-card">
+                <div class="category-image-container">
+                    <img alt="Electrodomésticos" class="category-image" 
+                         src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"/>
+                    <div class="category-overlay"></div>
+                </div>
+                <h3 class="category-title">Electrodomésticos</h3>
+                <p class="category-description">Calidad garantizada</p>
+            </div>
+            
+            <!-- Muebles y Hogar -->
+            <div class="category-card">
+                <div class="category-image-container">
+                    <img alt="Muebles y Hogar" class="category-image" 
+                         src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"/>
+                    <div class="category-overlay"></div>
+                </div>
+                <h3 class="category-title">Muebles y Hogar</h3>
+                <p class="category-description">Diseño para tu vida</p>
+            </div>
+            
+            <!-- Herramientas -->
+            <div class="category-card">
+                <div class="category-image-container">
+                    <img alt="Herramientas" class="category-image" 
+                         src="photo-1554825959-e9a6670d4f18.avif"/>
+                    <div class="category-overlay"></div>
+                </div>
+                <h3 class="category-title">Herramientas</h3>
+                <p class="category-description">Uso profesional</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <div class="footer-logo-symbol">
+                        <div class="t-main"></div>
+                        <div class="logo-bars">
+                            <div class="bar-black"></div>
+                            <div class="bar-red"></div>
+                        </div>
+                    </div>
+                    <span class="footer-logo-text">TECOMMERS</span>
+                </div>
+                <p class="footer-description">Tu aliado estratégico en compras online. Calidad, rapidez y confianza en cada uno de tus pedidos.</p>
+                <div class="social-icons">
+                    <div class="social-icon">
+                        <span class="material-symbols-outlined">share</span>
+                    </div>
+                    <div class="social-icon">
+                        <span class="material-symbols-outlined">mail</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-heading">Empresa</h4>
+                <ul class="footer-links">
+                    <li><a class="footer-link" href="#">Sobre Nosotros</a></li>
+                    <li><a class="footer-link" href="#">Sucursales</a></li>
+                    <li><a class="footer-link" href="#">Trabaja con nosotros</a></li>
+                    <li><a class="footer-link" href="#">Sustentabilidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-heading">Soporte</h4>
+                <ul class="footer-links">
+                    <li><a class="footer-link" href="#">Centro de ayuda</a></li>
+                    <li><a class="footer-link" href="#">Políticas de devolución</a></li>
+                    <li><a class="footer-link" href="#">Términos y condiciones</a></li>
+                    <li><a class="footer-link" href="#">Estado de envío</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-heading">Newsletter</h4>
+                <p class="newsletter-description">Suscríbete para recibir ofertas exclusivas cada semana.</p>
+                <div class="newsletter-form">
+                    <input class="newsletter-input" placeholder="Tu correo electrónico" type="email"/>
+                    <button class="newsletter-button">
+                        Suscribirme
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© 2024 Tecommers. Todos los derechos reservados.</p>
+            <div class="footer-bottom-links">
+                <a class="footer-bottom-link" href="#">Privacidad</a>
+                <a class="footer-bottom-link" href="#">Legal</a>
+                <a class="footer-bottom-link" href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para asegurar que los iconos funcionen -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const style = document.createElement('style');
+            style.textContent = `
+                @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
