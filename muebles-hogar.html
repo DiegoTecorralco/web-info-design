@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Tecommers - Muebles y Hogar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body class="body">
+    <!-- ================= NAVBAR PRINCIPAL ================= -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 160 120">
+                    <path d="M10 20H80L65 50H45L30 110H10L25 50H10V20Z" fill="#cf2e2e"/>
+                    <path d="M50 55H78L75 73H47L50 55Z" fill="black"/>
+                    <path d="M43 85H71L68 103H40L43 85Z" fill="#cf2e2e"/>
+                </svg>
+                <span class="logo-text">TECOMMERS</span>
+            </div>
+
+            <nav class="nav">
+                <a href="homePage.html" class="nav-link">Home</a>
+                <a href="category.html" class="nav-link active">Categorías</a>
+                <a href="offer.html" class="nav-link">Ofertas</a>
+                <a href="ourServices.html" class="nav-link">Servicios</a>
+                <a href="our.html" class="nav-link">Nosotros</a>
+            </nav>
+
+            <div class="icon-container">
+                <button class="icon-button">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </button>
+                <button class="icon-button">
+                    <span class="material-symbols-outlined">person</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- ================= FIN NAVBAR ================= -->
+
+    <!-- ================= CONTENIDO PRINCIPAL ================= -->
+    <main class="offers-main">
+        <div class="offers-header">
+            <h1 class="offers-title">Muebles y Hogar</h1>
+            <p class="offers-subtitle">Diseño, confort y estilo para cada espacio</p>
+            
+            <!-- Barra de búsqueda principal mejorada -->
+            <div class="offers-search-container">
+                <div class="offers-search-box">
+                    <span class="material-symbols-outlined offers-search-icon">search</span>
+                    <input type="text" class="offers-search-input" 
+                           placeholder="Buscar sofás, mesas, dormitorios, decoración, estilos..." 
+                           id="offers-search-input">
+                    <button class="offers-search-button" id="offers-search-btn">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                </div>
+                
+                <!-- Sugerencias de búsqueda rápida -->
+                <div class="search-suggestions">
+                    <span class="search-suggestion-label">Buscar rápido:</span>
+                    <button class="search-suggestion" data-search="Sofá">Sofá</button>
+                    <button class="search-suggestion" data-search="Cama">Cama</button>
+                    <button class="search-suggestion" data-search="Mesa">Mesa</button>
+                    <button class="search-suggestion" data-search="Moderno">Moderno</button>
+                    <button class="search-suggestion" data-search="Escandinavo">Escandinavo</button>
+                </div>
+                
+                <!-- Filtros rápidos -->
+                <div class="offers-quick-filters">
+                    <button class="quick-filter-btn active" data-filter="all">Todos</button>
+                    <button class="quick-filter-btn" data-filter="living">Sala</button>
+                    <button class="quick-filter-btn" data-filter="bedroom">Dormitorio</button>
+                    <button class="quick-filter-btn" data-filter="dining">Comedor</button>
+                    <button class="quick-filter-btn" data-filter="office">Oficina</button>
+                    <button class="quick-filter-btn" data-filter="outdoor">Exterior</button>
+                    <button class="quick-filter-btn" data-filter="decor">Decoración</button>
+                    <button class="quick-filter-btn" data-filter="eco">Ecológicos</button>
+                    <button class="quick-filter-btn" data-filter="latest">Nuevos diseños</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información de resultados -->
+        <div class="offers-results-info">
+            <span class="offers-count" id="offers-count">8 productos encontrados</span>
+            <div class="offers-sort">
+                <label for="offers-sort-select">Ordenar por:</label>
+                <select class="offers-sort-select" id="offers-sort-select">
+                    <option value="relevance">Relevancia</option>
+                    <option value="price-asc">Precio: menor a mayor</option>
+                    <option value="price-desc">Precio: mayor a menor</option>
+                    <option value="popularity">Más populares</option>
+                    <option value="newest">Más nuevos</option>
+                    <option value="material">Calidad material</option>
+                    <option value="style">Estilo A-Z</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Grid de productos -->
+        <div class="offers-grid" id="offers-grid">
+            <!-- Producto 1: Sofá Seccional Moderno -->
+            <div class="product-card" data-category="living latest" data-material="tela" data-style="moderno" data-seats="5" data-model="2024">
+                <div class="product-image-container">
+                    <div class="product-discount">25% OFF</div>
+                    <img class="product-image" 
+                         src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Sofá Seccional Moderno"/>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-name">Sofá Seccional Moderno</h3>
+                    <p class="product-description">Sofá seccional 5 plazas en tela premium, diseño modular, patas de madera maciza, chaise longue.</p>
+                    <div class="product-specs">
+                        <span class="product-spec"><span class="material-symbols-outlined">chair</span> 5 plazas</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">palette</span> Tela Premium</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">forest</span> Madera Maciza</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">weekend</span> Modular</span>
+                    </div>
+                    <div class="product-price-container">
+                        <span class="product-old-price">$1,299.00</span>
+                        <div class="product-price-wrapper">
+                            <p class="product-price">$974.25</p>
+                        </div>
+                    </div>
+                    <button class="product-button">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <!-- Producto 2: Cama King Size -->
+            <div class="product-card" data-category="bedroom latest" data-material="madera" data-style="rustico" data-size="king" data-model="2024">
+                <div class="product-image-container">
+                    <div class="product-discount">20% OFF</div>
+                    <img class="product-image" 
+                         src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Cama King Size Roble"/>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-name">Cama King Size Roble</h3>
+                    <p class="product-description">Cama king size en roble macizo, diseño rústico moderno, cabecera acolchada, estructura reforzada.</p>
+                    <div class="product-specs">
+                        <span class="product-spec"><span class="material-symbols-outlined">bed</span> King Size</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">forest</span> Roble Macizo</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">view_in_ar</span> 200x200 cm</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">king_bed</span> Cabecera Acolchada</span>
+                    </div>
+                    <div class="product-price-container">
+                        <span class="product-old-price">$899.00</span>
+                        <div class="product-price-wrapper">
+                            <p class="product-price">$719.20</p>
+                        </div>
+                    </div>
+                    <button class="product-button">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <!-- Producto 3: Mesa de Comedor -->
+            <div class="product-card" data-category="dining" data-material="vidrio" data-style="moderno" data-seats="6" data-model="2023">
+                <div class="product-image-container">
+                    <div class="product-discount">15% OFF</div>
+                    <img class="product-image" 
+                         src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Mesa de Comedor Extensible"/>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-name">Mesa Comedor Extensible</h3>
+                    <p class="product-description">Mesa de comedor extensible de vidrio templado, base de acero inoxidable, para 6-8 personas, fácil limpieza.</p>
+                    <div class="product-specs">
+                        <span class="product-spec"><span class="material-symbols-outlined">table_restaurant</span> 6-8 personas</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">diamond</span> Vidrio Templado</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">crop_din</span> Extensible</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">clean_hands</span> Fácil limpieza</span>
+                    </div>
+                    <div class="product-price-container">
+                        <span class="product-old-price">$599.00</span>
+                        <div class="product-price-wrapper">
+                            <p class="product-price">$509.15</p>
+                        </div>
+                    </div>
+                    <button class="product-button">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <!-- Producto 4: Escritorio de Oficina -->
+            <div class="product-card" data-category="office latest" data-material="MDF" data-style="industrial" data-features="ajustable" data-model="2024">
+                <div class="product-image-container">
+                    <div class="product-discount">30% OFF</div>
+                    <img class="product-image" 
+                         src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Escritorio Ajustable Oficina"/>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-name">Escritorio Ajustable</h3>
+                    <p class="product-description">Escritorio de oficina con altura ajustable eléctrica, diseño industrial, cable management, superficie anti-rayas.</p>
+                    <div class="product-specs">
+                        <span class="product-spec"><span class="material-symbols-outlined">desk</span> Ajustable</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">settings</span> Eléctrico</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">cable</span> Cable Management</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">shield</span> Anti-rayas</span>
+                    </div>
+                    <div class="product-price-container">
+                        <span class="product-old-price">$449.00</span>
+                        <div class="product-price-wrapper">
+                            <p class="product-price">$314.30</p>
+                        </div>
+                    </div>
+                    <button class="product-button">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <!-- Producto 5: Juego de Terraza -->
+            <div class="product-card" data-category="outdoor eco" data-material="rattan" data-style="moderno" data-weather="exterior" data-model="2023">
+                <div class="product-image-container">
+                    <div class="product-discount">22% OFF</div>
+                    <img class="product-image" 
+                         src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Juego de Terraza Rattan"/>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-name">Juego Terraza Rattan</h3>
+                    <p class="product-description">Juego de terraza 5 piezas en rattan sintético, resistente a la intemperie, cojines incluidos, mesa central.</p>
+                    <div class="product-specs">
+                        <span class="product-spec"><span class="material-symbols-outlined">deck</span> 5 piezas</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">eco</span> Rattan Sintético</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">weather_sunny</span> Resistente</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">table_bar</span> Mesa Central</span>
+                    </div>
+                    <div class="product-price-container">
+                        <span class="product-old-price">$799.00</span>
+                        <div class="product-price-wrapper">
+                            <p class="product-price">$623.22</p>
+                        </div>
+                    </div>
+                    <button class="product-button">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <!-- Producto 6: Alfombra Persa -->
+            <div class="product-card" data-category="decor" data-material="lana" data-style="persa" data-size="3x2m" data-model="2023">
+                <div class="product-image-container">
+                    <div class="product-discount">18% OFF</div>
+                    <img class="product-image" 
+                         src="https://images.unsplash.com/photo-1575414003591-ece8b4d7c8a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Alfombra Persa de Lana"/>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-name">Alfombra Persa Lana</h3>
+                    <p class="product-description">Alfombra persa hecha a mano en lana natural, diseño tradicional, tamaño 3x2 metros, antialérgica.</p>
+                    <div class="product-specs">
+                        <span class="product-spec"><span class="material-symbols-outlined">carpet</span> 3x2 metros</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">woo_commerce</span> Lana Natural</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">handyman</span> Hecha a mano</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">allergy</span> Antialérgica</span>
+                    </div>
+                    <div class="product-price-container">
+                        <span class="product-old-price">$349.00</span>
+                        <div class="product-price-wrapper">
+                            <p class="product-price">$286.18</p>
+                        </div>
+                    </div>
+                    <button class="product-button">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <!-- Producto 7: Lámpara de Pie Moderna -->
+            <div class="product-card" data-category="decor latest" data-material="metal" data-style="minimalista" data-lighting="LED" data-model="2024">
+                <div class="product-image-container">
+                    <div class="product-discount">12% OFF</div>
+                    <img class="product-image" 
+                         src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Lámpara de Pie Moderna"/>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-name">Lámpara de Pie Arco</h3>
+                    <p class="product-description">Lámpara de pie estilo arco, base de mármol, luz LED regulable, altura ajustable, 3 modos de luz.</p>
+                    <div class="product-specs">
+                        <span class="product-spec"><span class="material-symbols-outlined">lightbulb</span> LED Regulable</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">architecture</span> Diseño Arco</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">tune</span> Altura Ajustable</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">settings_brightness</span> 3 modos luz</span>
+                    </div>
+                    <div class="product-price-container">
+                        <span class="product-old-price">$189.00</span>
+                        <div class="product-price-wrapper">
+                            <p class="product-price">$166.32</p>
+                        </div>
+                    </div>
+                    <button class="product-button">Agregar al carrito</button>
+                </div>
+            </div>
+
+            <!-- Producto 8: Mueble de TV -->
+            <div class="product-card" data-category="living" data-material="MDP" data-style="escandinavo" data-storage="abierto" data-model="2023">
+                <div class="product-image-container">
+                    <div class="product-discount">20% OFF</div>
+                    <img class="product-image" 
+                         src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Mueble para TV Escandinavo"/>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-name">Mueble TV Escandinavo</h3>
+                    <p class="product-description">Mueble para TV estilo escandinavo, almacenamiento abierto, diseño minimalista, hasta 65", puertas corredizas.</p>
+                    <div class="product-specs">
+                        <span class="product-spec"><span class="material-symbols-outlined">tv</span> Hasta 65"</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">shelves</span> Almacenamiento</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">design_services</span> Escandinavo</span>
+                        <span class="product-spec"><span class="material-symbols-outlined">door_sliding</span> Puertas Corredizas</span>
+                    </div>
+                    <div class="product-price-container">
+                        <span class="product-old-price">$329.00</span>
+                        <div class="product-price-wrapper">
+                            <p class="product-price">$263.20</p>
+                        </div>
+                    </div>
+                    <button class="product-button">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mensaje cuando no hay resultados -->
+        <div class="no-offers-results" id="no-offers-results" style="display: none;">
+            <div class="no-results-content">
+                <span class="material-symbols-outlined">weekend</span>
+                <h3>No se encontraron muebles</h3>
+                <p>Intenta con otros términos de búsqueda o ajusta los filtros</p>
+                <button class="clear-search-btn" id="clear-offers-search">Mostrar todos</button>
+            </div>
+        </div>
+
+        <div class="offers-catalog-button-container">
+            <button class="offers-catalog-button">
+                Ver colección completa
+            </button>
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="offers-footer">
+        <div class="offers-footer-content">
+            <div class="offers-footer-section">
+                <div class="offers-footer-logo">
+                    <div class="offers-logo-graphic">
+                        <div class="logo-red-bar"></div>
+                        <div class="logo-black-bar"></div>
+                        <div class="logo-red-bar-bottom"></div>
+                        <div class="logo-red-vertical"></div>
+                    </div>
+                    <span class="offers-footer-logo-text">TECOMMERS</span>
+                </div>
+                <p class="offers-footer-description">
+                    Diseño que transforma espacios. Muebles de calidad para un hogar con estilo y personalidad.
+                </p>
+            </div>
+            <div class="offers-footer-section">
+                <h4 class="offers-footer-heading">Habitaciones</h4>
+                <ul class="offers-footer-links">
+                    <li><a class="offers-footer-link" href="#" data-filter="living">Sala de Estar</a></li>
+                    <li><a class="offers-footer-link" href="#" data-filter="bedroom">Dormitorio</a></li>
+                    <li><a class="offers-footer-link" href="#" data-filter="dining">Comedor</a></li>
+                    <li><a class="offers-footer-link" href="#" data-filter="office">Oficina</a></li>
+                    <li><a class="offers-footer-link" href="#" data-filter="outdoor">Exterior</a></li>
+                    <li><a class="offers-footer-link" href="#" data-filter="decor">Decoración</a></li>
+                </ul>
+            </div>
+            <div class="offers-footer-section">
+                <h4 class="offers-footer-heading">Estilos</h4>
+                <ul class="offers-footer-links">
+                    <li><a class="offers-footer-link" href="#" data-style="moderno">Moderno</a></li>
+                    <li><a class="offers-footer-link" href="#" data-style="escandinavo">Escandinavo</a></li>
+                    <li><a class="offers-footer-link" href="#" data-style="industrial">Industrial</a></li>
+                    <li><a class="offers-footer-link" href="#" data-style="rustico">Rústico</a></li>
+                    <li><a class="offers-footer-link" href="#" data-style="minimalista">Minimalista</a></li>
+                    <li><a class="offers-footer-link" href="#" data-style="persa">Persa</a></li>
+                </ul>
+            </div>
+            <div class="offers-footer-section">
+                <h4 class="offers-footer-heading">Servicios</h4>
+                <p class="offers-footer-description" style="font-size: 0.875rem; margin-bottom: 1rem;">
+                    Diseño de interiores, armado profesional, entrega a domicilio y garantía de materiales.
+                </p>
+                <div class="newsletter-box">
+                    <input class="newsletter-input" placeholder="Email para novedades" type="email"/>
+                    <button class="newsletter-submit">SUSCRIBIR</button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-footer-bottom">
+            <p class="offers-footer-copyright">© 2024 Tecommers Muebles y Hogar. Diseño y calidad certificada.</p>
+            <div class="offers-footer-bottom-links">
+                <a class="offers-footer-bottom-link" href="#">Diseño de Interiores</a>
+                <a class="offers-footer-bottom-link" href="#">Armado Profesional</a>
+                <a class="offers-footer-bottom-link" href="#">Entrega</a>
+                <a class="offers-footer-bottom-link" href="#">Garantías</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de búsqueda mejorado -->
+    <script>
+        class FurnitureSearchSystem {
+            constructor() {
+                this.searchInput = document.getElementById('offers-search-input');
+                this.searchButton = document.getElementById('offers-search-btn');
+                this.offersGrid = document.getElementById('offers-grid');
+                this.offersCount = document.getElementById('offers-count');
+                this.noResults = document.getElementById('no-offers-results');
+                this.clearButton = document.getElementById('clear-offers-search');
+                this.sortSelect = document.getElementById('offers-sort-select');
+                this.productCards = [];
+                this.currentFilter = 'all';
+                this.currentSort = 'relevance';
+                
+                this.materials = ['madera', 'tela', 'vidrio', 'metal', 'MDF', 'rattan', 'lana', 'MDP'];
+                this.styles = ['moderno', 'rustico', 'industrial', 'escandinavo', 'minimalista', 'persa'];
+                
+                this.init();
+            }
+            
+            init() {
+                this.productCards = Array.from(this.offersGrid.querySelectorAll('.product-card'));
+                this.originalOrder = [...this.productCards];
+                
+                this.setupEventListeners();
+                this.updateCount();
+                this.setupFooterLinks();
+                this.setupStyleFilters();
+                this.setupSearchSuggestions();
+                
+                // Enfocar el buscador principal al cargar
+                setTimeout(() => {
+                    this.searchInput.focus();
+                }, 500);
+            }
+            
+            setupEventListeners() {
+                // Búsqueda en tiempo real con debounce
+                this.searchInput.addEventListener('input', this.debounce(() => {
+                    this.filterProducts();
+                }, 300));
+                
+                this.searchButton.addEventListener('click', () => {
+                    this.filterProducts();
+                    this.showSearchFeedback();
+                });
+                
+                this.searchInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.filterProducts();
+                        this.showSearchFeedback();
+                    }
+                });
+                
+                document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('.quick-filter-btn').forEach(b => {
+                            b.classList.remove('active');
+                        });
+                        
+                        e.target.classList.add('active');
+                        this.currentFilter = e.target.dataset.filter;
+                        this.filterProducts();
+                        
+                        // Mostrar info especial para algunos filtros
+                        if (e.target.dataset.filter === 'eco') {
+                            this.showEcoInfo();
+                        }
+                        if (e.target.dataset.filter === 'latest') {
+                            this.showLatestInfo();
+                        }
+                    });
+                });
+                
+                this.sortSelect.addEventListener('change', (e) => {
+                    this.currentSort = e.target.value;
+                    this.sortProducts();
+                });
+                
+                this.clearButton.addEventListener('click', () => {
+                    this.clearSearch();
+                });
+                
+                // Eventos para botones de compra
+                document.querySelectorAll('.product-button').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const productCard = this.closest('.product-card');
+                        const productName = productCard.querySelector('.product-name').textContent;
+                        const productStyle = this.getStyleName(productCard.getAttribute('data-style'));
+                        
+                        this.showCartNotification(productName, productStyle);
+                        
+                        // Actualizar contador de carrito
+                        this.updateCartCounter();
+                    }.bind(this));
+                });
+            }
+            
+            setupSearchSuggestions() {
+                document.querySelectorAll('.search-suggestion').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const searchTerm = e.target.dataset.search;
+                        this.searchInput.value = searchTerm;
+                        this.filterProducts();
+                        this.showSearchFeedback();
+                        this.searchInput.focus();
+                    });
+                });
+            }
+            
+            setupFooterLinks() {
+                // Enlaces de habitaciones
+                document.querySelectorAll('.offers-footer-link[data-filter]').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const filter = e.target.dataset.filter;
+                        
+                        // Activar el filtro correspondiente
+                        document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                            if (btn.dataset.filter === filter) {
+                                btn.classList.add('active');
+                            }
+                        });
+                        
+                        this.currentFilter = filter;
+                        this.filterProducts();
+                        
+                        // Scroll al inicio de los productos
+                        document.querySelector('.offers-results-info').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+                
+                // Enlaces de estilos
+                document.querySelectorAll('.offers-footer-link[data-style]').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const style = e.target.dataset.style;
+                        
+                        // Mostrar productos del estilo seleccionado
+                        this.filterByStyle(style);
+                        
+                        // Mostrar notificación de estilo
+                        this.showStyleNotification(style);
+                    });
+                });
+            }
+            
+            setupStyleFilters() {
+                // Agregar información sobre estilos ecológicos
+                const ecoFilter = document.querySelector('.quick-filter-btn[data-filter="eco"]');
+                if (ecoFilter) {
+                    ecoFilter.addEventListener('click', () => {
+                        this.showEcoInfo();
+                    });
+                }
+            }
+            
+            filterProducts() {
+                const searchTerm = this.searchInput.value.toLowerCase().trim();
+                
+                this.productCards.forEach(card => {
+                    const productName = card.querySelector('.product-name').textContent.toLowerCase();
+                    const productDesc = card.querySelector('.product-description').textContent.toLowerCase();
+                    const productCategories = card.getAttribute('data-category').split(' ');
+                    const productMaterial = card.getAttribute('data-material').toLowerCase();
+                    const productStyle = card.getAttribute('data-style').toLowerCase();
+                    const productModel = card.getAttribute('data-model')?.toLowerCase() || '';
+                    
+                    let matchesSearch = true;
+                    let matchesFilter = true;
+                    
+                    // Búsqueda por texto
+                    if (searchTerm) {
+                        matchesSearch = productName.includes(searchTerm) || 
+                                        productDesc.includes(searchTerm) ||
+                                        productMaterial.includes(searchTerm) ||
+                                        productStyle.includes(searchTerm);
+                        
+                        this.highlightMatches(card, searchTerm);
+                    } else {
+                        this.removeHighlights(card);
+                    }
+                    
+                    // Filtro por categoría
+                    if (this.currentFilter !== 'all') {
+                        if (this.currentFilter === 'eco') {
+                            matchesFilter = productCategories.includes('eco') || 
+                                           productMaterial.includes('natural') ||
+                                           productMaterial.includes('rattan') ||
+                                           productMaterial.includes('lana');
+                        } else if (this.currentFilter === 'latest') {
+                            matchesFilter = productModel === '2024';
+                        } else {
+                            matchesFilter = productCategories.includes(this.currentFilter);
+                        }
+                    }
+                    
+                    card.style.display = (matchesSearch && matchesFilter) ? 'flex' : 'none';
+                });
+                
+                this.sortProducts();
+                this.updateCount();
+                
+                if (searchTerm) {
+                    this.showSearchNotification(searchTerm);
+                }
+            }
+            
+            filterByStyle(style) {
+                this.searchInput.value = style;
+                this.currentFilter = 'all';
+                
+                document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Filtrar productos por estilo
+                this.productCards.forEach(card => {
+                    const productStyle = card.getAttribute('data-style').toLowerCase();
+                    const searchTerm = style.toLowerCase();
+                    
+                    card.style.display = productStyle.includes(searchTerm) ? 'flex' : 'none';
+                });
+                
+                this.sortProducts();
+                this.updateCount();
+            }
+            
+            sortProducts() {
+                const visibleCards = this.productCards.filter(card => 
+                    card.style.display !== 'none'
+                );
+                
+                if (visibleCards.length === 0) return;
+                
+                visibleCards.sort((a, b) => {
+                    const aName = a.querySelector('.product-name').textContent;
+                    const bName = b.querySelector('.product-name').textContent;
+                    const aPrice = this.parsePrice(a.querySelector('.product-price').textContent);
+                    const bPrice = this.parsePrice(b.querySelector('.product-price').textContent);
+                    const aMaterial = this.getMaterialValue(a.getAttribute('data-material'));
+                    const bMaterial = this.getMaterialValue(b.getAttribute('data-material'));
+                    const aStyle = a.getAttribute('data-style').toLowerCase();
+                    const bStyle = b.getAttribute('data-style').toLowerCase();
+                    const aDiscount = this.getDiscountPercentage(a);
+                    const bDiscount = this.getDiscountPercentage(b);
+                    const aModel = a.getAttribute('data-model') || '0';
+                    const bModel = b.getAttribute('data-model') || '0';
+                    
+                    switch(this.currentSort) {
+                        case 'price-asc':
+                            return aPrice - bPrice;
+                        case 'price-desc':
+                            return bPrice - aPrice;
+                        case 'popularity':
+                            return bDiscount - aDiscount;
+                        case 'newest':
+                            return bModel - aModel;
+                        case 'material':
+                            return bMaterial - aMaterial;
+                        case 'style':
+                            return aStyle.localeCompare(bStyle);
+                        case 'relevance':
+                        default:
+                            const searchTerm = this.searchInput.value.toLowerCase();
+                            if (searchTerm) {
+                                const aNameMatch = aName.toLowerCase().includes(searchTerm);
+                                const bNameMatch = bName.toLowerCase().includes(searchTerm);
+                                if (aNameMatch && !bNameMatch) return -1;
+                                if (!aNameMatch && bNameMatch) return 1;
+                                return bDiscount - aDiscount;
+                            }
+                            return bDiscount - aDiscount;
+                    }
+                });
+                
+                visibleCards.forEach(card => {
+                    this.offersGrid.appendChild(card);
+                });
+            }
+            
+            getMaterialValue(material) {
+                const values = {
+                    'madera': 5,
+                    'roble': 5,
+                    'tela': 4,
+                    'lana': 5,
+                    'vidrio': 4,
+                    'metal': 3,
+                    'rattan': 4,
+                    'MDF': 3,
+                    'MDP': 3
+                };
+                return values[material.toLowerCase()] || 0;
+            }
+            
+            getStyleName(style) {
+                const names = {
+                    'moderno': 'Moderno',
+                    'rustico': 'Rústico',
+                    'industrial': 'Industrial',
+                    'escandinavo': 'Escandinavo',
+                    'minimalista': 'Minimalista',
+                    'persa': 'Persa'
+                };
+                return names[style] || style;
+            }
+            
+            getDiscountPercentage(card) {
+                const oldPrice = this.parsePrice(card.querySelector('.product-old-price').textContent);
+                const newPrice = this.parsePrice(card.querySelector('.product-price').textContent);
+                return ((oldPrice - newPrice) / oldPrice) * 100;
+            }
+            
+            highlightMatches(card, searchTerm) {
+                const nameElement = card.querySelector('.product-name');
+                const descElement = card.querySelector('.product-description');
+                
+                const originalName = nameElement.textContent;
+                const originalDesc = descElement.textContent;
+                
+                const highlightedName = this.highlightText(originalName, searchTerm);
+                const highlightedDesc = this.highlightText(originalDesc, searchTerm);
+                
+                nameElement.innerHTML = highlightedName;
+                descElement.innerHTML = highlightedDesc;
+            }
+            
+            removeHighlights(card) {
+                const nameElement = card.querySelector('.product-name');
+                const descElement = card.querySelector('.product-description');
+                
+                nameElement.innerHTML = nameElement.textContent;
+                descElement.innerHTML = descElement.textContent;
+            }
+            
+            highlightText(text, searchTerm) {
+                if (!searchTerm) return text;
+                
+                const regex = new RegExp(`(${searchTerm})`, 'gi');
+                return text.replace(regex, '<mark>$1</mark>');
+            }
+            
+            parsePrice(priceText) {
+                return parseFloat(priceText.replace('$', '').replace(',', ''));
+            }
+            
+            updateCount() {
+                const visibleCount = this.productCards.filter(card => 
+                    card.style.display !== 'none'
+                ).length;
+                
+                const totalCount = this.productCards.length;
+                
+                this.offersCount.textContent = `${visibleCount} mueble${visibleCount !== 1 ? 's' : ''} de ${totalCount}`;
+                
+                if (visibleCount === 0) {
+                    this.noResults.style.display = 'block';
+                } else {
+                    this.noResults.style.display = 'none';
+                }
+            }
+            
+            clearSearch() {
+                this.searchInput.value = '';
+                
+                document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+                    if (btn.dataset.filter === 'all') {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                
+                this.sortSelect.value = 'relevance';
+                
+                this.currentFilter = 'all';
+                this.currentSort = 'relevance';
+                
+                this.productCards.forEach(card => {
+                    this.removeHighlights(card);
+                });
+                
+                this.productCards.forEach(card => {
+                    card.style.display = 'flex';
+                });
+                
+                this.originalOrder.forEach(card => {
+                    this.offersGrid.appendChild(card);
+                });
+                
+                this.updateCount();
+                this.searchInput.focus();
+            }
+            
+            showSearchNotification(searchTerm) {
+                let notification = document.querySelector('.search-notification');
+                
+                if (!notification) {
+                    notification = document.createElement('div');
+                    notification.className = 'search-notification';
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.parentNode.removeChild(notification);
+                        }
+                    }, 3000);
+                }
+                
+                const visibleCount = this.productCards.filter(card => 
+                    card.style.display !== 'none'
+                ).length;
+                
+                notification.innerHTML = `
+                    <span class="material-symbols-outlined">search</span>
+                    <span>${visibleCount} mueble${visibleCount !== 1 ? 's' : ''} para "${searchTerm}"</span>
+                `;
+                
+                notification.classList.add('show');
+            }
+            
+            showSearchFeedback() {
+                // Efecto visual en el buscador
+                const searchBox = document.querySelector('.offers-search-box');
+                searchBox.style.transform = 'scale(1.02)';
+                searchBox.style.boxShadow = '0 0 0 3px rgba(207, 46, 46, 0.3)';
+                
+                setTimeout(() => {
+                    searchBox.style.transform = '';
+                    searchBox.style.boxShadow = '';
+                }, 300);
+            }
+            
+            showStyleNotification(style) {
+                const styleName = this.getStyleName(style);
+                const notification = document.createElement('div');
+                notification.className = 'style-notification';
+                notification.innerHTML = `
+                    <span class="material-symbols-outlined">palette</span>
+                    <div>
+                        <strong>Estilo ${styleName}</strong>
+                        <p>Mostrando muebles con diseño ${styleName.toLowerCase()}</p>
+                    </div>
+                `;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('show');
+                    setTimeout(() => {
+                        notification.classList.remove('show');
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                notification.parentNode.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 2500);
+                }, 100);
+            }
+            
+            showEcoInfo() {
+                const info = document.createElement('div');
+                info.className = 'eco-info';
+                info.innerHTML = `
+                    <div class="eco-content">
+                        <span class="material-symbols-outlined">eco</span>
+                        <h4>Muebles Ecológicos</h4>
+                        <p>Productos fabricados con materiales sostenibles, procesos responsables y diseño consciente con el medio ambiente.</p>
+                        <div class="eco-features">
+                            <div class="eco-feature">
+                                <span class="material-symbols-outlined">forest</span>
+                                <span>Maderas certificadas</span>
+                            </div>
+                            <div class="eco-feature">
+                                <span class="material-symbols-outlined">recycling</span>
+                                <span>Materiales reciclados</span>
+                            </div>
+                            <div class="eco-feature">
+                                <span class="material-symbols-outlined">water_drop</span>
+                                <span>Pinturas no tóxicas</span>
+                            </div>
+                        </div>
+                        <button class="close-eco">Ver colección</button>
+                    </div>
+                `;
+                
+                document.body.appendChild(info);
+                
+                setTimeout(() => {
+                    info.classList.add('show');
+                }, 100);
+                
+                info.querySelector('.close-eco').addEventListener('click', () => {
+                    info.classList.remove('show');
+                    setTimeout(() => {
+                        if (info.parentNode) {
+                            info.parentNode.removeChild(info);
+                        }
+                    }, 300);
+                });
+            }
+            
+            showLatestInfo() {
+                const info = document.createElement('div');
+                info.className = 'latest-info';
+                info.innerHTML = `
+                    <div class="latest-content">
+                        <span class="material-symbols-outlined">new_releases</span>
+                        <h4>Nuevos Diseños 2024</h4>
+                        <p>Las últimas tendencias en mobiliario, con diseños innovadores, materiales premium y funcionalidad mejorada.</p>
+                        <div class="latest-features">
+                            <div class="latest-feature">
+                                <span class="material-symbols-outlined">trending_up</span>
+                                <span>Tendencias 2024</span>
+                            </div>
+                            <div class="latest-feature">
+                                <span class="material-symbols-outlined">design_services</span>
+                                <span>Diseño Innovador</span>
+                            </div>
+                            <div class="latest-feature">
+                                <span class="material-symbols-outlined">workspace_premium</span>
+                                <span>Materiales Premium</span>
+                            </div>
+                        </div>
+                        <button class="close-latest">Ver novedades</button>
+                    </div>
+                `;
+                
+                document.body.appendChild(info);
+                
+                setTimeout(() => {
+                    info.classList.add('show');
+                }, 100);
+                
+                info.querySelector('.close-latest').addEventListener('click', () => {
+                    info.classList.remove('show');
+                    setTimeout(() => {
+                        if (info.parentNode) {
+                            info.parentNode.removeChild(info);
+                        }
+                    }, 300);
+                });
+            }
+            
+            showCartNotification(productName, style) {
+                const notification = document.createElement('div');
+                notification.className = 'cart-notification';
+                notification.innerHTML = `
+                    <span class="material-symbols-outlined">check_circle</span>
+                    <div>
+                        <strong>¡Agregado al carrito!</strong>
+                        <p>${productName}</p>
+                        <small>Estilo: ${style} • Incluye armado profesional</small>
+                    </div>
+                `;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('show');
+                    setTimeout(() => {
+                        notification.classList.remove('show');
+                        setTimeout(() => {
+                            if (notification.parentNode) {
+                                notification.parentNode.removeChild(notification);
+                            }
+                        }, 300);
+                    }, 3000);
+                }, 100);
+            }
+            
+            updateCartCounter() {
+                const cartButton = document.querySelector('.icon-button:first-child');
+                let counter = cartButton.querySelector('.cart-counter');
+                
+                if (!counter) {
+                    counter = document.createElement('span');
+                    counter.className = 'cart-counter';
+                    cartButton.appendChild(counter);
+                }
+                
+                let count = parseInt(counter.textContent) || 0;
+                count++;
+                counter.textContent = count;
+                counter.style.display = 'flex';
+            }
+            
+            debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+        }
+        
+        // Inicializar sistema
+        document.addEventListener('DOMContentLoaded', () => {
+            const furnitureSearch = new FurnitureSearchSystem();
+            window.furnitureSearch = furnitureSearch;
+        });
+    </script>
+
+    <!-- Estilos mejorados para el buscador principal -->
+    <style>
+        /* Buscador principal mejorado */
+        .offers-search-container {
+            max-width: 900px;
+            margin: 2rem auto 1.5rem;
+        }
+        
+        .offers-search-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 3px solid #cf2e2e;
+            border-radius: 16px;
+            padding: 12px;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(207, 46, 46, 0.15);
+        }
+        
+        .offers-search-box:focus-within {
+            box-shadow: 0 12px 30px rgba(207, 46, 46, 0.25);
+            transform: translateY(-2px);
+        }
+        
+        .offers-search-icon {
+            color: #cf2e2e;
+            margin: 0 16px;
+            font-size: 28px;
+        }
+        
+        .offers-search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            padding: 16px 0;
+            color: var(--brand-black);
+            font-weight: 500;
+        }
+        
+        .offers-search-input::placeholder {
+            color: #94a3b8;
+            font-weight: 400;
+        }
+        
+        .offers-search-button {
+            background: #cf2e2e;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 16px 24px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        
+        .offers-search-button:hover {
+            background: #b91c1c;
+            transform: scale(1.05);
+        }
+        
+        /* Sugerencias de búsqueda */
+        .search-suggestions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+            padding: 12px 0;
+        }
+        
+        .search-suggestion-label {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .search-suggestion {
+            background: #fee;
+            border: 1px solid #fcc;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 14px;
+            color: #cf2e2e;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        
+        .search-suggestion:hover {
+            background: #fdd;
+            transform: translateY(-2px);
+        }
+        
+        /* Especificaciones de producto */
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 8px 0 12px;
+        }
+        
+        .product-spec {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 10px;
+            color: #ffffff;
+            background: #cf2e2e;
+            padding: 4px 8px;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+        
+        .product-spec .material-symbols-outlined {
+            font-size: 11px;
+            color: #ffffff;
+        }
+        
+        /* Colores por material manteniendo rojo */
+        .product-spec[data-material="madera"],
+        .product-spec[data-material="roble"] {
+            background: #dc2626;
+        }
+        
+        .product-spec[data-material="vidrio"] {
+            background: #ef4444;
+        }
+        
+        .product-spec[data-material="lana"] {
+            background: #b91c1c;
+        }
+        
+        .product-spec[data-material="eco"] {
+            background: #10b981;
+        }
+        
+        /* Información ecológica */
+        .eco-info {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .eco-info.show {
+            opacity: 1;
+        }
+        
+        .eco-content {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .eco-content .material-symbols-outlined {
+            font-size: 48px;
+            color: #10b981;
+            margin-bottom: 20px;
+        }
+        
+        .eco-content h4 {
+            color: #1f2937;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+        
+        .eco-content p {
+            color: #6b7280;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .eco-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .eco-feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            background: #f0fdf4;
+            border-radius: 8px;
+        }
+        
+        .eco-feature .material-symbols-outlined {
+            font-size: 24px;
+            color: #10b981;
+            margin-bottom: 0;
+        }
+        
+        .eco-feature span:last-child {
+            font-size: 12px;
+            color: #065f46;
+            font-weight: 500;
+        }
+        
+        .close-eco {
+            background: #cf2e2e;
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .close-eco:hover {
+            background: #b91c1c;
+        }
+        
+        /* Información últimos diseños */
+        .latest-info {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .latest-info.show {
+            opacity: 1;
+        }
+        
+        .latest-content {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .latest-content .material-symbols-outlined {
+            font-size: 48px;
+            color: #cf2e2e;
+            margin-bottom: 20px;
+        }
+        
+        .latest-content h4 {
+            color: #1f2937;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+        
+        .latest-content p {
+            color: #6b7280;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .latest-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .latest-feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            background: #fee;
+            border-radius: 8px;
+        }
+        
+        .latest-feature .material-symbols-outlined {
+            font-size: 24px;
+            color: #cf2e2e;
+            margin-bottom: 0;
+        }
+        
+        .latest-feature span:last-child {
+            font-size: 12px;
+            color: #b91c1c;
+            font-weight: 500;
+        }
+        
+        .close-latest {
+            background: #cf2e2e;
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .close-latest:hover {
+            background: #b91c1c;
+        }
+        
+        /* Notificaciones de estilo */
+        .style-notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: white;
+            color: #1f2937;
+            padding: 16px;
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            z-index: 1000;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.3s, opacity 0.3s;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            max-width: 320px;
+            border-left: 4px solid #cf2e2e;
+        }
+        
+        .style-notification.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .style-notification .material-symbols-outlined {
+            color: #cf2e2e;
+            font-size: 24px;
+        }
+        
+        /* Contador del carrito */
+        .cart-counter {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #cf2e2e;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Notificaciones de carrito */
+        .cart-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            color: #1f2937;
+            padding: 16px;
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            z-index: 1000;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.3s, opacity 0.3s;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            max-width: 320px;
+            border-left: 4px solid #cf2e2e;
+        }
+        
+        .cart-notification.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .cart-notification .material-symbols-outlined {
+            color: #059669;
+            font-size: 24px;
+        }
+        
+        .cart-notification strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .cart-notification p {
+            margin: 4px 0;
+            font-weight: 500;
+        }
+        
+        .cart-notification small {
+            color: #6b7280;
+            font-size: 12px;
+            display: block;
+            margin-top: 4px;
+        }
+        
+        /* Notificaciones de búsqueda */
+        .search-notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: white;
+            border-left: 4px solid #cf2e2e;
+            padding: 16px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            transform: translateX(120%);
+            transition: transform 0.3s ease-out;
+            max-width: 350px;
+        }
+        
+        .search-notification.show {
+            transform: translateX(0);
+        }
+        
+        .search-notification .material-symbols-outlined {
+            color: #cf2e2e;
+        }
+        
+        /* Icono en no resultados */
+        .no-results-content .material-symbols-outlined {
+            font-size: 64px;
+            color: #cf2e2e;
+            margin-bottom: 1rem;
+        }
+        
+        /* Etiqueta de armado en precios */
+        .product-price-wrapper::after {
+            content: "✓ Incluye armado profesional";
+            display: block;
+            font-size: 11px;
+            color: #059669;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+        
+        /* Estilos para el botón de catálogo */
+        .offers-catalog-button {
+            background: white;
+            color: #cf2e2e;
+            border: 2px solid #cf2e2e;
+        }
+        
+        .offers-catalog-button:hover {
+            background: #cf2e2e;
+            color: white;
+        }
+        
+        /* Responsive para el buscador */
+        @media (max-width: 768px) {
+            .offers-search-box {
+                padding: 8px;
+            }
+            
+            .offers-search-input {
+                font-size: 16px;
+                padding: 12px 0;
+            }
+            
+            .offers-search-icon {
+                font-size: 24px;
+                margin: 0 12px;
+            }
+            
+            .offers-search-button {
+                padding: 12px 16px;
+            }
+            
+            .search-suggestions {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .search-suggestion-label {
+                margin-bottom: 8px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .offers-search-box {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .offers-search-input {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .offers-search-button {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -29,6 +29,7 @@
                 <a href="our.html" class="nav-link">Nosotros</a>
             </nav>
 
+
             <div class="icon-container">
                 <button class="icon-button">
                     <span class="material-symbols-outlined">shopping_cart</span>
@@ -46,11 +47,49 @@
         <div class="offers-header">
             <h1 class="offers-title">Ofertas</h1>
             <p class="offers-subtitle">Aprovecha descuentos exclusivos por tiempo limitado</p>
+            
+            <!-- Barra de búsqueda específica para ofertas -->
+            <div class="offers-search-container">
+                <div class="offers-search-box">
+                    <span class="material-symbols-outlined offers-search-icon">search</span>
+                    <input type="text" class="offers-search-input" 
+                           placeholder="Buscar en ofertas..." 
+                           id="offers-search-input">
+                    <button class="offers-search-button" id="offers-search-btn">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                </div>
+                
+                <!-- Filtros rápidos -->
+                <div class="offers-quick-filters">
+                    <button class="quick-filter-btn active" data-filter="all">Todas las ofertas</button>
+                    <button class="quick-filter-btn" data-filter="high-discount">Mayor descuento</button>
+                    <button class="quick-filter-btn" data-filter="technology">Tecnología</button>
+                    <button class="quick-filter-btn" data-filter="home">Hogar</button>
+                    <button class="quick-filter-btn" data-filter="fashion">Moda</button>
+                </div>
+            </div>
         </div>
 
-        <div class="offers-grid">
+        <!-- Información de resultados -->
+        <div class="offers-results-info">
+            <span class="offers-count" id="offers-count">4 ofertas encontradas</span>
+            <div class="offers-sort">
+                <label for="offers-sort-select">Ordenar por:</label>
+                <select class="offers-sort-select" id="offers-sort-select">
+                    <option value="relevance">Relevancia</option>
+                    <option value="price-asc">Precio: menor a mayor</option>
+                    <option value="price-desc">Precio: mayor a menor</option>
+                    <option value="discount">Mayor descuento</option>
+                    <option value="name">Nombre A-Z</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Grid de productos -->
+        <div class="offers-grid" id="offers-grid">
             <!-- Producto 1: iPhone -->
-            <div class="product-card">
+            <div class="product-card" data-category="technology" data-discount="20">
                 <div class="product-image-container">
                     <div class="product-discount">20% OFF</div>
                     <img class="product-image" 
@@ -59,6 +98,7 @@
                 </div>
                 <div class="product-content">
                     <h3 class="product-name">iPhone 17 Pro Max</h3>
+                    <p class="product-description">Smartphone de última generación con pantalla Super Retina XDR y cámara profesional.</p>
                     <div class="product-price-container">
                         <span class="product-old-price">$1,249.00</span>
                         <div class="product-price-wrapper">
@@ -70,7 +110,7 @@
             </div>
 
             <!-- Producto 2: Mueble -->
-            <div class="product-card">
+            <div class="product-card" data-category="home" data-discount="15">
                 <div class="product-image-container">
                     <div class="product-discount">15% OFF</div>
                     <img class="product-image" 
@@ -79,6 +119,7 @@
                 </div>
                 <div class="product-content">
                     <h3 class="product-name">Mueble Minimalista</h3>
+                    <p class="product-description">Mueble de diseño en madera de roble, perfecto para sala o dormitorio.</p>
                     <div class="product-price-container">
                         <span class="product-old-price">$529.00</span>
                         <div class="product-price-wrapper">
@@ -90,7 +131,7 @@
             </div>
 
             <!-- Producto 3: Ropa -->
-            <div class="product-card">
+            <div class="product-card" data-category="fashion" data-discount="30">
                 <div class="product-image-container">
                     <div class="product-discount">30% OFF</div>
                     <img class="product-image" 
@@ -99,6 +140,7 @@
                 </div>
                 <div class="product-content">
                     <h3 class="product-name">Conjunto Hombre Invierno</h3>
+                    <p class="product-description">Conjunto completo para invierno, incluye chaqueta impermeable y pantalón térmico.</p>
                     <div class="product-price-container">
                         <span class="product-old-price">$121.00</span>
                         <div class="product-price-wrapper">
@@ -110,7 +152,7 @@
             </div>
 
             <!-- Producto 4: Smart TV -->
-            <div class="product-card">
+            <div class="product-card" data-category="technology" data-discount="10">
                 <div class="product-image-container">
                     <div class="product-discount">10% OFF</div>
                     <img class="product-image" 
@@ -119,6 +161,7 @@
                 </div>
                 <div class="product-content">
                     <h3 class="product-name">Smart TV 4K 48"</h3>
+                    <p class="product-description">Televisor inteligente con resolución 4K, Android TV y asistente de voz integrado.</p>
                     <div class="product-price-container">
                         <span class="product-old-price">$665.00</span>
                         <div class="product-price-wrapper">
@@ -127,6 +170,100 @@
                     </div>
                     <button class="product-button">Comprar ahora</button>
                 </div>
+            </div>
+
+            <!-- Producto 5: Laptop Gaming -->
+            <div class="product-card" data-category="technology" data-discount="13">
+                <div class="product-image-container">
+                    <div class="product-discount">13% OFF</div>
+                    <img class="product-image" 
+                         src="https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Laptop Gaming"/>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-name">Laptop Gaming</h3>
+                    <p class="product-description">Laptop para gaming con procesador i7, 16GB RAM y tarjeta gráfica RTX 4060.</p>
+                    <div class="product-price-container">
+                        <span class="product-old-price">$1,499.00</span>
+                        <div class="product-price-wrapper">
+                            <p class="product-price">$1,299.00</p>
+                        </div>
+                    </div>
+                    <button class="product-button">Comprar ahora</button>
+                </div>
+            </div>
+
+            <!-- Producto 6: Sofá Moderno -->
+            <div class="product-card" data-category="home" data-discount="20">
+                <div class="product-image-container">
+                    <div class="product-discount">20% OFF</div>
+                    <img class="product-image" 
+                         src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Sofá Moderno"/>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-name">Sofá Moderno</h3>
+                    <p class="product-description">Sofá moderno 3 plazas en tela premium, diseño ergonómico y cómodo.</p>
+                    <div class="product-price-container">
+                        <span class="product-old-price">$999.00</span>
+                        <div class="product-price-wrapper">
+                            <p class="product-price">$799.00</p>
+                        </div>
+                    </div>
+                    <button class="product-button">Comprar ahora</button>
+                </div>
+            </div>
+
+            <!-- Producto 7: Zapatos Deportivos -->
+            <div class="product-card" data-category="fashion" data-discount="31">
+                <div class="product-image-container">
+                    <div class="product-discount">31% OFF</div>
+                    <img class="product-image" 
+                         src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Zapatos Deportivos"/>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-name">Zapatos Deportivos</h3>
+                    <p class="product-description">Zapatos para running con tecnología air cushion, ideales para entrenamiento.</p>
+                    <div class="product-price-container">
+                        <span class="product-old-price">$129.99</span>
+                        <div class="product-price-wrapper">
+                            <p class="product-price">$89.99</p>
+                        </div>
+                    </div>
+                    <button class="product-button">Comprar ahora</button>
+                </div>
+            </div>
+
+            <!-- Producto 8: Refrigerador Smart -->
+            <div class="product-card" data-category="home" data-discount="20">
+                <div class="product-image-container">
+                    <div class="product-discount">20% OFF</div>
+                    <img class="product-image" 
+                         src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Refrigerador Smart"/>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-name">Refrigerador Smart</h3>
+                    <p class="product-description">Refrigerador inteligente con control por app, sistema de enfriamiento inverter.</p>
+                    <div class="product-price-container">
+                        <span class="product-old-price">$1,499.00</span>
+                        <div class="product-price-wrapper">
+                            <p class="product-price">$1,199.00</p>
+                        </div>
+                    </div>
+                    <button class="product-button">Comprar ahora</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mensaje cuando no hay resultados -->
+        <div class="no-offers-results" id="no-offers-results" style="display: none;">
+            <div class="no-results-content">
+                <span class="material-symbols-outlined">search_off</span>
+                <h3>No se encontraron ofertas</h3>
+                <p>Intenta con otros términos de búsqueda o ajusta los filtros</p>
+                <button class="clear-search-btn" id="clear-offers-search">Mostrar todas las ofertas</button>
             </div>
         </div>
 
@@ -186,5 +323,456 @@
             </div>
         </div>
     </footer>
+
+    <!-- Script de búsqueda -->
+    <script>
+        class OffersSearchSystem {
+            constructor() {
+                this.searchInput = document.getElementById('offers-search-input');
+                this.searchButton = document.getElementById('offers-search-btn');
+                this.offersGrid = document.getElementById('offers-grid');
+                this.offersCount = document.getElementById('offers-count');
+                this.noResults = document.getElementById('no-offers-results');
+                this.clearButton = document.getElementById('clear-offers-search');
+                this.sortSelect = document.getElementById('offers-sort-select');
+                this.productCards = [];
+                this.currentFilter = 'all';
+                this.currentSort = 'relevance';
+                
+                this.init();
+            }
+            
+            init() {
+                // Obtener todas las tarjetas de producto
+                this.productCards = Array.from(this.offersGrid.querySelectorAll('.product-card'));
+                this.originalOrder = [...this.productCards];
+                
+                // Event listeners
+                this.setupEventListeners();
+                
+                // Actualizar contador inicial
+                this.updateCount();
+            }
+            
+            setupEventListeners() {
+                // Búsqueda en tiempo real
+                this.searchInput.addEventListener('input', () => {
+                    this.filterProducts();
+                });
+                
+                // Botón de búsqueda
+                this.searchButton.addEventListener('click', () => {
+                    this.filterProducts();
+                });
+                
+                // Enter en input
+                this.searchInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.filterProducts();
+                    }
+                });
+                
+                // Filtros rápidos
+                document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        // Remover active de todos
+                        document.querySelectorAll('.quick-filter-btn').forEach(b => {
+                            b.classList.remove('active');
+                        });
+                        
+                        // Agregar active al clickeado
+                        e.target.classList.add('active');
+                        
+                        this.currentFilter = e.target.dataset.filter;
+                        this.filterProducts();
+                    });
+                });
+                
+                // Ordenamiento
+                this.sortSelect.addEventListener('change', (e) => {
+                    this.currentSort = e.target.value;
+                    this.sortProducts();
+                });
+                
+                // Limpiar búsqueda
+                this.clearButton.addEventListener('click', () => {
+                    this.clearSearch();
+                });
+                
+                // Búsqueda en header
+                const headerSearch = document.getElementById('header-search-input');
+                if (headerSearch) {
+                    headerSearch.addEventListener('input', this.debounce(() => {
+                        this.performQuickSearch(headerSearch.value);
+                    }, 300));
+                }
+            }
+            
+            filterProducts() {
+                const searchTerm = this.searchInput.value.toLowerCase().trim();
+                
+                this.productCards.forEach(card => {
+                    const productName = card.querySelector('.product-name').textContent.toLowerCase();
+                    const productDesc = card.querySelector('.product-description').textContent.toLowerCase();
+                    const productCategory = card.getAttribute('data-category');
+                    const productDiscount = parseInt(card.getAttribute('data-discount'));
+                    
+                    let matchesSearch = true;
+                    let matchesFilter = true;
+                    
+                    // Búsqueda por texto
+                    if (searchTerm) {
+                        matchesSearch = productName.includes(searchTerm) || 
+                                        productDesc.includes(searchTerm);
+                        
+                        // Resaltar coincidencias
+                        this.highlightMatches(card, searchTerm);
+                    } else {
+                        this.removeHighlights(card);
+                    }
+                    
+                    // Filtro por categoría
+                    if (this.currentFilter !== 'all') {
+                        switch(this.currentFilter) {
+                            case 'high-discount':
+                                matchesFilter = productDiscount >= 20;
+                                break;
+                            case 'technology':
+                                matchesFilter = productCategory === 'technology';
+                                break;
+                            case 'home':
+                                matchesFilter = productCategory === 'home';
+                                break;
+                            case 'fashion':
+                                matchesFilter = productCategory === 'fashion';
+                                break;
+                        }
+                    }
+                    
+                    // Mostrar/ocultar
+                    if (matchesSearch && matchesFilter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Ordenar productos
+                this.sortProducts();
+                
+                // Actualizar contador y mostrar/ocultar mensaje de no resultados
+                this.updateCount();
+                
+                // Mostrar notificación si hay búsqueda
+                if (searchTerm) {
+                    this.showSearchNotification(searchTerm);
+                }
+            }
+            
+            sortProducts() {
+                const visibleCards = this.productCards.filter(card => 
+                    card.style.display !== 'none'
+                );
+                
+                if (visibleCards.length === 0) return;
+                
+                visibleCards.sort((a, b) => {
+                    const aName = a.querySelector('.product-name').textContent;
+                    const bName = b.querySelector('.product-name').textContent;
+                    const aPrice = this.parsePrice(a.querySelector('.product-price').textContent);
+                    const bPrice = this.parsePrice(b.querySelector('.product-price').textContent);
+                    const aDiscount = parseInt(a.getAttribute('data-discount'));
+                    const bDiscount = parseInt(b.getAttribute('data-discount'));
+                    
+                    switch(this.currentSort) {
+                        case 'price-asc':
+                            return aPrice - bPrice;
+                        case 'price-desc':
+                            return bPrice - aPrice;
+                        case 'discount':
+                            return bDiscount - aDiscount;
+                        case 'name':
+                            return aName.localeCompare(bName);
+                        case 'relevance':
+                        default:
+                            // Si hay búsqueda, ordenar por coincidencia en nombre
+                            const searchTerm = this.searchInput.value.toLowerCase();
+                            if (searchTerm) {
+                                const aNameMatch = aName.toLowerCase().includes(searchTerm);
+                                const bNameMatch = bName.toLowerCase().includes(searchTerm);
+                                if (aNameMatch && !bNameMatch) return -1;
+                                if (!aNameMatch && bNameMatch) return 1;
+                                return bDiscount - aDiscount; // Por defecto por descuento
+                            }
+                            return bDiscount - aDiscount;
+                    }
+                });
+                
+                // Reordenar en el DOM
+                visibleCards.forEach(card => {
+                    this.offersGrid.appendChild(card);
+                });
+            }
+            
+            highlightMatches(card, searchTerm) {
+                const nameElement = card.querySelector('.product-name');
+                const descElement = card.querySelector('.product-description');
+                
+                const originalName = nameElement.textContent;
+                const originalDesc = descElement.textContent;
+                
+                // Crear versión con highlights
+                const highlightedName = this.highlightText(originalName, searchTerm);
+                const highlightedDesc = this.highlightText(originalDesc, searchTerm);
+                
+                nameElement.innerHTML = highlightedName;
+                descElement.innerHTML = highlightedDesc;
+            }
+            
+            removeHighlights(card) {
+                const nameElement = card.querySelector('.product-name');
+                const descElement = card.querySelector('.product-description');
+                
+                nameElement.innerHTML = nameElement.textContent;
+                descElement.innerHTML = descElement.textContent;
+            }
+            
+            highlightText(text, searchTerm) {
+                if (!searchTerm) return text;
+                
+                const regex = new RegExp(`(${searchTerm})`, 'gi');
+                return text.replace(regex, '<mark>$1</mark>');
+            }
+            
+            parsePrice(priceText) {
+                // Convertir "$999.00" a 999.00
+                return parseFloat(priceText.replace('$', '').replace(',', ''));
+            }
+            
+            updateCount() {
+                const visibleCount = this.productCards.filter(card => 
+                    card.style.display !== 'none'
+                ).length;
+                
+                const totalCount = this.productCards.length;
+                
+                this.offersCount.textContent = `${visibleCount} oferta${visibleCount !== 1 ? 's' : ''} de ${totalCount}`;
+                
+                // Mostrar/ocultar mensaje de no resultados
+                if (visibleCount === 0) {
+                    this.noResults.style.display = 'block';
+                } else {
+                    this.noResults.style.display = 'none';
+                }
+                
+                // Actualizar texto del botón de limpiar
+                if (this.searchInput.value || this.currentFilter !== 'all') {
+                    this.clearButton.textContent = 'Mostrar todas las ofertas';
+                } else {
+                    this.clearButton.textContent = 'Limpiar búsqueda';
+                }
+            }
+            
+            clearSearch() {
+                // Limpiar input
+                this.searchInput.value = '';
+                
+                // Resetear filtros
+                document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+                    if (btn.dataset.filter === 'all') {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                
+                // Resetear sort
+                this.sortSelect.value = 'relevance';
+                
+                // Resetear variables
+                this.currentFilter = 'all';
+                this.currentSort = 'relevance';
+                
+                // Remover highlights
+                this.productCards.forEach(card => {
+                    this.removeHighlights(card);
+                });
+                
+                // Mostrar todos los productos
+                this.productCards.forEach(card => {
+                    card.style.display = 'flex';
+                });
+                
+                // Restaurar orden original
+                this.originalOrder.forEach(card => {
+                    this.offersGrid.appendChild(card);
+                });
+                
+                // Actualizar contador
+                this.updateCount();
+                
+                // Enfocar input
+                this.searchInput.focus();
+            }
+            
+            showSearchNotification(searchTerm) {
+                // Crear notificación si no existe
+                let notification = document.querySelector('.search-notification');
+                
+                if (!notification) {
+                    notification = document.createElement('div');
+                    notification.className = 'search-notification';
+                    document.body.appendChild(notification);
+                    
+                    // Auto-remover después de 3 segundos
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.parentNode.removeChild(notification);
+                        }
+                    }, 3000);
+                }
+                
+                const visibleCount = this.productCards.filter(card => 
+                    card.style.display !== 'none'
+                ).length;
+                
+                notification.innerHTML = `
+                    <span class="material-symbols-outlined">search</span>
+                    <span>${visibleCount} resultado${visibleCount !== 1 ? 's' : ''} para "${searchTerm}"</span>
+                `;
+                
+                notification.classList.add('show');
+            }
+            
+            performQuickSearch(query) {
+                if (query.length < 2) {
+                    this.hideDropdown();
+                    return;
+                }
+                
+                // Filtrar productos que coincidan
+                const results = this.productCards.filter(card => {
+                    const productName = card.querySelector('.product-name').textContent.toLowerCase();
+                    const productDesc = card.querySelector('.product-description').textContent.toLowerCase();
+                    return productName.includes(query.toLowerCase()) || 
+                           productDesc.includes(query.toLowerCase());
+                }).slice(0, 5);
+                
+                this.displayQuickResults(results, query);
+            }
+            
+            displayQuickResults(results, query) {
+                const dropdown = document.getElementById('search-results-dropdown');
+                if (!dropdown) return;
+                
+                if (results.length === 0) {
+                    dropdown.innerHTML = `
+                        <div class="dropdown-result">
+                            <div class="dropdown-result-title">No se encontraron ofertas</div>
+                        </div>
+                    `;
+                    dropdown.classList.add('active');
+                    return;
+                }
+                
+                let html = '';
+                results.forEach(card => {
+                    const name = card.querySelector('.product-name').textContent;
+                    const price = card.querySelector('.product-price').textContent;
+                    const discount = card.getAttribute('data-discount');
+                    
+                    html += `
+                        <a href="#" class="dropdown-result" data-card-id="${Array.from(this.productCards).indexOf(card)}">
+                            <div class="dropdown-result-type">Oferta - ${discount}% OFF</div>
+                            <div class="dropdown-result-title">${name}</div>
+                            <div class="dropdown-result-desc">${price}</div>
+                        </a>
+                    `;
+                });
+                
+                dropdown.innerHTML = html;
+                dropdown.classList.add('active');
+                
+                // Agregar eventos a los resultados del dropdown
+                dropdown.querySelectorAll('.dropdown-result').forEach(result => {
+                    result.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const cardIndex = parseInt(e.currentTarget.getAttribute('data-card-id'));
+                        this.scrollToProduct(cardIndex);
+                        this.hideDropdown();
+                    });
+                });
+            }
+            
+            hideDropdown() {
+                const dropdown = document.getElementById('search-results-dropdown');
+                if (dropdown) {
+                    dropdown.classList.remove('active');
+                }
+            }
+            
+            scrollToProduct(cardIndex) {
+                if (cardIndex >= 0 && cardIndex < this.productCards.length) {
+                    const card = this.productCards[cardIndex];
+                    
+                    // Asegurarse que el producto sea visible
+                    card.style.display = 'flex';
+                    
+                    // Resaltar temporalmente
+                    card.style.boxShadow = '0 0 0 3px rgba(207, 46, 46, 0.3)';
+                    card.style.transition = 'box-shadow 0.3s';
+                    
+                    // Scroll a la tarjeta
+                    card.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                    
+                    // Quitar resaltado después de 2 segundos
+                    setTimeout(() => {
+                        card.style.boxShadow = '';
+                    }, 2000);
+                    
+                    // Actualizar contador
+                    this.updateCount();
+                }
+            }
+            
+            debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+        }
+        
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', () => {
+            const offersSearch = new OffersSearchSystem();
+            
+            // Hacer disponible globalmente
+            window.offersSearch = offersSearch;
+            
+            // Agregar eventos a botones de compra
+            document.querySelectorAll('.product-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productName = this.closest('.product-card').querySelector('.product-name').textContent;
+                    alert(`¡${productName} agregado al carrito!`);
+                });
+            });
+            
+            // Cerrar dropdown al hacer clic fuera
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.header-search-container')) {
+                    offersSearch.hideDropdown();
+                }
+            });
+        });
+    </script>
 </body>
-</html>
+</html> 
