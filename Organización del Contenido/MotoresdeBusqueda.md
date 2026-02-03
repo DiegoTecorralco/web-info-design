@@ -120,6 +120,8 @@
 
 **El sistema permite encontrar herramientas específicas por tipo, marca, potencia y características especiales, con énfasis en herramientas profesionales y novedades técnicas.**
 
+![alt text](image.png)
+
 ## **Sistema de Búsqueda - Electrodomésticos**
 
 ### **¿QUÉ SE PUEDE BUSCAR?**
@@ -208,6 +210,8 @@
 - **Interfaz simple:** Todo visible y accesible en un vistazo
 
 **El sistema ayuda a encontrar exactamente lo que buscas en 3 clics o menos.**
+
+![alt text](image-1.png)
 
 
 # **Sistema de Búsqueda - Tecnología**
@@ -305,6 +309,8 @@
 - **CSS dinámico:** Estilos en línea para notificaciones y efectos
 
 **El sistema permite encontrar productos tecnológicos en segundos, con filtrado inteligente por especificaciones técnicas y categorías especializadas.**
+
+![alt text](image-3.png)
 
 # **Sistema de Búsqueda - Muebles y Hogar**
 
@@ -440,3 +446,5 @@
 - **Footer especializado:** Sección independiente para filtros por estilo
 
 **El sistema permite encontrar muebles por habitación, estilo, material y características especiales, con énfasis en diseño, calidad de materiales y opciones sostenibles para el hogar.**
+
+![alt text](image-2.png)
