@@ -1,4 +1,4 @@
-## **CONTENIDO INDEXADO Y BUSCABLE (Según el documento):**
+## **CONTENIDO INDEXADO Y BUSCABLE:**
 
 ### **Nivel 1: Contenido PRIMARIO (Máxima Relevancia)**
 
@@ -62,7 +62,7 @@
 6. **Reseñas o calificaciones de productos**
 7. **Contenido multimedia** (texto de imágenes, videos)
 
----
+
 
 ## **PRIORIZACIÓN POR RELEVANCIA PARA EL USUARIO:**
 
