@@ -99,7 +99,6 @@ Pregunta de seguridad: ¿Cuál es el resultado de 7 + 3?
 ### **Estados del campo**:
 - **Válido**: Borde verde ✓ + mensaje "Campo válido" (opcional)
 - **Inválido**: Borde rojo + mensaje de error específico
-- **En foco**: Borde azul
 
 ### **Momento de validación**:
 1. **Validación en tiempo real**: Al salir del campo (evento `blur`)
@@ -133,6 +132,3 @@ Pregunta de seguridad: ¿Cuál es el resultado de 7 + 3?
 ### **Compatibilidad**:
 - Funciona sin JavaScript (fallback a validación solo en servidor)
 - Responsive para móviles y desktop
-
-
-

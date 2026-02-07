@@ -12,10 +12,19 @@ class TecommersRegister {
         this.resetBtn = document.getElementById('resetBtn');
         this.continueBtn = document.getElementById('continueBtn');
         
+        // Preguntas de verificación humana (se selecciona una al azar)
+        this.captchaQuestions = [
+            { question: "¿Cuál es el resultado de 7 + 5?", answer: "12" },
+            { question: "¿Cuántos días tiene una semana?", answer: "7" },
+            { question: "¿Cuánto es 5 + 4?", answer: "9" },
+            { question: "¿Cuántos lados tiene un triángulo?", answer: "3" }
+        ];
+        
         // Estado del formulario
         this.isSubmitting = false;
         this.countdown = 5;
         this.countdownInterval = null;
+        this.currentCaptcha = null;
         
         // Inicializar
         this.init();
@@ -26,6 +35,7 @@ class TecommersRegister {
         this.setupPasswordToggle();
         this.setupPasswordStrength();
         this.setupRealTimeValidation();
+        this.setupCaptchaQuestion();
         
         // Configurar fecha máxima (18 años)
         this.setMaxBirthDate();
@@ -69,35 +79,53 @@ class TecommersRegister {
     }
     
     setupRealTimeValidation() {
-        // Validar campo al perder el foco
+        // Validar campo al perder el foco con debouncing
         const inputs = this.form.querySelectorAll('input[required]');
         inputs.forEach(input => {
+            let timeout;
+            
             input.addEventListener('blur', () => {
+                clearTimeout(timeout);
                 this.validateField(input.id);
             });
             
             // Validación en tiempo real para el nombre (para detectar números inmediatamente)
             if (input.id === 'nombre') {
-                input.addEventListener('input', () => {
+                input.addEventListener('input', (e) => {
                     const value = input.value;
-                    // Si hay algún número, mostrar error y quitar clase 'valid'
-                    if (/\d/.test(value)) {
-                        this.showError('nombre', 'El nombre no puede contener números');
-                        input.classList.remove('valid');
-                        input.classList.add('invalid');
-                    } else if (value.length >= 3) {
-                        // Si no hay números y tiene al menos 3 caracteres, quitar error
-                        if (this.hasError('nombre') && !/\d/.test(value)) {
-                            this.hideError('nombre');
+                    clearTimeout(timeout);
+                    
+                    timeout = setTimeout(() => {
+                        // Si hay algún número, mostrar error y quitar clase 'valid'
+                        if (/\d/.test(value)) {
+                            this.showError('nombre', 'El nombre no puede contener números');
+                            input.classList.remove('valid');
+                            input.classList.add('invalid');
+                        } else if (value.length >= 3 && !/\d/.test(value)) {
+                            this.validateNombre(value);
+                        } else if (value.length < 3) {
+                            input.classList.remove('valid');
                             input.classList.remove('invalid');
-                            if (/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(value)) {
-                                input.classList.add('valid');
-                            }
                         }
-                    } else {
-                        // Si tiene menos de 3 caracteres, quitar clase 'valid'
-                        input.classList.remove('valid');
-                    }
+                    }, 300);
+                });
+            } else if (input.id === 'email') {
+                input.addEventListener('input', (e) => {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => {
+                        if (input.value.length > 0) {
+                            this.validateEmail(input.value);
+                        }
+                    }, 300);
+                });
+            } else if (input.id === 'telefono') {
+                input.addEventListener('input', (e) => {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => {
+                        if (input.value.length > 0) {
+                            this.validateTelefono(input.value);
+                        }
+                    }, 300);
                 });
             } else {
                 // Para otros campos, solo limpiar error
@@ -109,10 +137,13 @@ class TecommersRegister {
             }
         });
         
-        // Validar coincidencia de contraseñas en tiempo real
+        // Validar coincidencia de contraseñas en tiempo real con debouncing
         const confirmPassword = document.getElementById('confirmPassword');
-        confirmPassword.addEventListener('input', () => {
-            this.validatePasswordMatch();
+        confirmPassword.addEventListener('input', (e) => {
+            clearTimeout(this.confirmPasswordTimeout);
+            this.confirmPasswordTimeout = setTimeout(() => {
+                this.validatePasswordMatch();
+            }, 300);
         });
         
         // Validar checkbox de términos
@@ -120,6 +151,18 @@ class TecommersRegister {
         terminos.addEventListener('change', () => {
             this.validateField('terminos');
         });
+    }
+    
+    setupCaptchaQuestion() {
+        // Seleccionar pregunta al azar
+        const randomIndex = Math.floor(Math.random() * this.captchaQuestions.length);
+        this.currentCaptcha = this.captchaQuestions[randomIndex];
+        
+        // Actualizar el label en el formulario
+        const captchaLabel = document.querySelector('.captcha-label');
+        if (captchaLabel) {
+            captchaLabel.textContent = this.currentCaptcha.question;
+        }
     }
     
     setMaxBirthDate() {
@@ -305,42 +348,28 @@ class TecommersRegister {
             return false;
         }
         
-        if (value.length < 3) {
-            this.showError('nombre', 'El nombre debe tener al menos 3 caracteres');
+        if (value.length < 2) {
+            this.showError('nombre', 'El nombre debe tener al menos 2 caracteres');
             nombreInput.classList.remove('valid');
             return false;
         }
         
-        if (value.length > 100) {
-            this.showError('nombre', 'El nombre es demasiado largo');
+        if (value.length > 50) {
+            this.showError('nombre', 'El nombre debe tener máximo 50 caracteres');
             nombreInput.classList.remove('valid');
             return false;
         }
         
         // Verificar si hay números en el nombre
         if (/\d/.test(value)) {
-            this.showError('nombre', 'El nombre no puede contener números');
+            this.showError('nombre', 'Solo se permiten letras y espacios');
             nombreInput.classList.remove('valid');
             return false;
         }
         
         // Verificar si hay caracteres especiales no permitidos
         if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(value)) {
-            this.showError('nombre', 'El nombre solo puede contener letras y espacios');
-            nombreInput.classList.remove('valid');
-            return false;
-        }
-        
-        // Verificar que tenga al menos un espacio (nombre y apellido)
-        if (!/\s/.test(value)) {
-            this.showError('nombre', 'Por favor ingresa nombre y apellido');
-            nombreInput.classList.remove('valid');
-            return false;
-        }
-        
-        // Verificar que no tenga espacios múltiples consecutivos
-        if (/\s{2,}/.test(value)) {
-            this.showError('nombre', 'No uses espacios múltiples consecutivos');
+            this.showError('nombre', 'Solo se permiten letras y espacios');
             nombreInput.classList.remove('valid');
             return false;
         }
@@ -360,9 +389,35 @@ class TecommersRegister {
             return false;
         }
         
+        // Validaciones específicas según los requisitos
+        if (!/@/.test(value)) {
+            this.showError('email', 'El correo debe incluir el símbolo @');
+            emailInput.classList.remove('valid');
+            return false;
+        }
+        
+        const parts = value.split('@');
+        if (parts.length !== 2 || !parts[0] || !parts[1]) {
+            this.showError('email', 'Ingresa un correo válido (ejemplo: usuario@dominio.com)');
+            emailInput.classList.remove('valid');
+            return false;
+        }
+        
+        if (!/\./.test(parts[1])) {
+            this.showError('email', 'El dominio del correo parece incompleto');
+            emailInput.classList.remove('valid');
+            return false;
+        }
+        
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
-            this.showError('email', 'Ingresa un correo electrónico válido (ejemplo@correo.com)');
+            this.showError('email', 'Ingresa un correo válido (ejemplo: usuario@dominio.com)');
+            emailInput.classList.remove('valid');
+            return false;
+        }
+        
+        if (/\s/.test(value)) {
+            this.showError('email', 'El correo no debe contener espacios');
             emailInput.classList.remove('valid');
             return false;
         }
@@ -382,11 +437,26 @@ class TecommersRegister {
             return false;
         }
         
-        if (!/^[0-9]{10}$/.test(value)) {
+        // Validar que solo contenga números
+        if (!/^\d+$/.test(value)) {
+            this.showError('telefono', 'Ingresa 10 dígitos, todos deben ser números y sin espacios');
+            telefonoInput.classList.remove('valid');
+            return false;
+        }
+
+        if (value.length > 10) {
+            this.showError('telefono', 'El teléfono debe tener exactamente 10 dígitos, por favor, ingresa un número que no tenga más de 10 dígitos');
+            telefonoInput.classList.remove('valid');
+            return false;
+        }
+        
+        if (value.length !== 10) {
             this.showError('telefono', 'El teléfono debe tener exactamente 10 dígitos');
             telefonoInput.classList.remove('valid');
             return false;
         }
+
+        
         
         this.hideError('telefono');
         telefonoInput.classList.remove('invalid');
@@ -439,19 +509,29 @@ class TecommersRegister {
             return false;
         }
         
-        const requirements = [
-            { regex: /[A-Z]/, message: 'Debe incluir al menos una letra mayúscula' },
-            { regex: /[a-z]/, message: 'Debe incluir al menos una letra minúscula' },
-            { regex: /[0-9]/, message: 'Debe incluir al menos un número' },
-            { regex: /[@$!%*?&]/, message: 'Debe incluir al menos un carácter especial (@$!%*?&)' }
-        ];
+        // Validar requisitos específicos con mensajes personalizados
+        if (!/[A-Z]/.test(value)) {
+            this.showError('password', 'Incluye al menos una letra mayúscula');
+            passwordInput.classList.remove('valid');
+            return false;
+        }
         
-        for (const req of requirements) {
-            if (!req.regex.test(value)) {
-                this.showError('password', req.message);
-                passwordInput.classList.remove('valid');
-                return false;
-            }
+        if (!/[a-z]/.test(value)) {
+            this.showError('password', 'Incluye al menos una letra minúscula');
+            passwordInput.classList.remove('valid');
+            return false;
+        }
+        
+        if (!/[0-9]/.test(value)) {
+            this.showError('password', 'Incluye al menos un número');
+            passwordInput.classList.remove('valid');
+            return false;
+        }
+        
+        if (!/[@$!%*?&]/.test(value)) {
+            this.showError('password', 'Incluye al menos un carácter especial (@$!%*?&)');
+            passwordInput.classList.remove('valid');
+            return false;
         }
         
         this.hideError('password');
@@ -498,8 +578,9 @@ class TecommersRegister {
             return false;
         }
         
-        if (parseInt(value) !== 12) {
-            this.showError('captcha', 'Respuesta incorrecta. ¿Cuánto es 7 + 5?');
+        // Validar si la respuesta es correcta (case insensitive)
+        if (value.trim().toLowerCase() !== this.currentCaptcha.answer.toLowerCase()) {
+            this.showError('captcha', 'Respuesta incorrecta. Por favor, intenta nuevamente');
             captchaInput.classList.remove('valid');
             return false;
         }
@@ -511,8 +592,6 @@ class TecommersRegister {
     }
     
     validateTerminos(value) {
-        const terminosInput = document.getElementById('terminos');
-        
         if (!value) {
             this.showError('terminos', 'Debes aceptar los términos y condiciones');
             return false;
@@ -535,7 +614,13 @@ class TecommersRegister {
         if (inputElement) {
             inputElement.classList.add('invalid');
             inputElement.classList.remove('valid');
-            inputElement.focus();
+            
+            // Si es el primer error, hacer scroll al campo
+            if (!this.firstErrorScrolled) {
+                inputElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                inputElement.focus();
+                this.firstErrorScrolled = true;
+            }
         }
     }
     
@@ -642,6 +727,12 @@ class TecommersRegister {
             icon.textContent = 'cancel';
             icon.style.color = '#ef4444';
         });
+        
+        // Generar nueva pregunta de captcha
+        this.setupCaptchaQuestion();
+        
+        // Resetear flag de scroll
+        this.firstErrorScrolled = false;
         
         // Enfocar primer campo
         document.getElementById('nombre').focus();
