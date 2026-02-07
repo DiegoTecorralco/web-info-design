@@ -25,6 +25,7 @@ class TecommersRegister {
         this.countdown = 5;
         this.countdownInterval = null;
         this.currentCaptcha = null;
+        this.firstErrorField = null; // Para guardar el primer campo con error
         
         // Inicializar
         this.init();
@@ -267,8 +268,13 @@ class TecommersRegister {
         // Prevenir múltiples envíos
         if (this.isSubmitting) return;
         
+        // Resetear el primer campo con error
+        this.firstErrorField = null;
+        
         // Validar formulario
         if (!this.validateForm()) {
+            // Si hay errores, hacer scroll al primer campo con error
+            this.scrollToFirstError();
             return;
         }
         
@@ -290,18 +296,27 @@ class TecommersRegister {
     validateForm() {
         let isValid = true;
         
-        // Validar campos individuales
-        const fields = ['nombre', 'email', 'telefono', 'fechaNacimiento', 'password', 'captcha', 'terminos'];
+        // Definir orden de campos para encontrar el primer error
+        const fieldOrder = ['nombre', 'email', 'telefono', 'fechaNacimiento', 'password', 'confirmPassword', 'captcha', 'terminos'];
         
-        fields.forEach(fieldId => {
-            if (!this.validateField(fieldId)) {
-                isValid = false;
+        // Validar campos en orden
+        for (const fieldId of fieldOrder) {
+            let fieldValid;
+            
+            if (fieldId === 'confirmPassword') {
+                fieldValid = this.validatePasswordMatch();
+            } else {
+                fieldValid = this.validateField(fieldId);
             }
-        });
-        
-        // Validar coincidencia de contraseñas
-        if (!this.validatePasswordMatch()) {
-            isValid = false;
+            
+            if (!fieldValid) {
+                isValid = false;
+                
+                // Guardar el primer campo con error
+                if (!this.firstErrorField) {
+                    this.firstErrorField = fieldId;
+                }
+            }
         }
         
         return isValid;
@@ -336,6 +351,22 @@ class TecommersRegister {
                 return this.validateTerminos(value);
             default:
                 return true;
+        }
+    }
+    
+    scrollToFirstError() {
+        if (this.firstErrorField) {
+            const errorField = document.getElementById(this.firstErrorField);
+            if (errorField) {
+                // Hacer scroll suave al campo con error
+                errorField.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+                
+                // Poner foco en el campo
+                errorField.focus();
+            }
         }
     }
     
@@ -455,8 +486,6 @@ class TecommersRegister {
             telefonoInput.classList.remove('valid');
             return false;
         }
-
-        
         
         this.hideError('telefono');
         telefonoInput.classList.remove('invalid');
@@ -614,13 +643,6 @@ class TecommersRegister {
         if (inputElement) {
             inputElement.classList.add('invalid');
             inputElement.classList.remove('valid');
-            
-            // Si es el primer error, hacer scroll al campo
-            if (!this.firstErrorScrolled) {
-                inputElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                inputElement.focus();
-                this.firstErrorScrolled = true;
-            }
         }
     }
     
@@ -732,7 +754,7 @@ class TecommersRegister {
         this.setupCaptchaQuestion();
         
         // Resetear flag de scroll
-        this.firstErrorScrolled = false;
+        this.firstErrorField = null;
         
         // Enfocar primer campo
         document.getElementById('nombre').focus();

@@ -152,3 +152,220 @@
 
 ![alt text](image-59.png)
 
+
+# **Pruebas en el campo Fecha de Nacimiento**
+
+## **Validación de Fecha de Nacimiento (Campo vacío)**
+
+**Tipo de prueba:** campo vacío.
+**Mensaje de error feedback:** "La fecha de nacimiento es obligatoria".
+**feedback estático:** "Debes ser mayor de 18 años".
+
+![alt text](image-60.png)
+
+## **Validación de Fecha de Nacimiento (Menor de 18 años)**
+
+**Tipo de prueba:** fecha que hace al usuario menor de 18 años.
+**Mensaje de error feedback:** "Debes ser mayor de 18 años para registrarte".
+**feedback estático:** "Debes ser mayor de 18 años".
+
+![alt text](image-61.png)
+
+## **Validación de Fecha de Nacimiento (Fecha futura)**
+
+**Tipo de prueba:** fecha en el futuro (no permitida por el navegador).
+**Mensaje de error feedback:** El navegador muestra su propio calendariio de validación.
+**feedback estático:** "Debes ser mayor de 18 años".
+
+![alt text](image-62.png)
+
+## **Validación de Fecha de Nacimiento (Fecha válida - exactamente 18 años)**
+
+**Tipo de prueba:** fecha que hace al usuario exactamente 18 años.
+**Mensaje de error feedback:** No hay mensaje de error feedback, el borde del campo se pone en verde.
+**feedback estático:** "Debes ser mayor de 18 años".
+
+![alt text](image-63.png)
+
+
+# **Pruebas en el campo Contraseña**
+
+## **Validación de Contraseña (Campo vacío)**
+
+**Tipo de prueba:** campo vacío.
+**Mensaje de error feedback:** "La contraseña es obligatoria".
+**feedback estático:** "Mínimo 8 caracteres".
+
+![alt text](image-64.png)
+
+## **Validación de Contraseña (Menos de 8 caracteres)**
+
+**Tipo de prueba:** contraseña con menos de 8 caracteres.
+**Mensaje de error feedback:** "La contraseña debe tener al menos 8 caracteres".
+**feedback estático:** "Mínimo 8 caracteres".
+
+![alt text](image-65.png)
+
+## **Validación de Contraseña (Sin letra mayúscula)**
+
+**Tipo de prueba:** contraseña sin letra mayúscula.
+**Mensaje de error feedback:** "Incluye al menos una letra mayúscula".
+**feedback estático:** "Mínimo 8 caracteres".
+
+**Ejemplo:** "abcdefg123!"
+
+![alt text](image-66.png)
+
+## **Validación de Contraseña (Sin letra minúscula)**
+
+**Tipo de prueba:** contraseña sin letra minúscula.
+**Mensaje de error feedback:** "Incluye al menos una letra minúscula".
+**feedback estático:** "Mínimo 8 caracteres".
+
+**Ejemplo:** "ABCDEFG123!"
+
+![alt text](image-67.png)
+
+## **Validación de Contraseña (Sin número)**
+
+**Tipo de prueba:** contraseña sin número.
+**Mensaje de error feedback:** "Incluye al menos un número".
+**feedback estático:** "Mínimo 8 caracteres".
+
+**Ejemplo:** "Abcdefg@!"
+
+![alt text](image-68.png)
+
+## **Validación de Contraseña (Sin carácter especial)**
+
+**Tipo de prueba:** contraseña sin carácter especial.
+**Mensaje de error feedback:** "Incluye al menos un carácter especial (@$!%*?&)".
+**feedback estático:** "Mínimo 8 caracteres".
+
+**Ejemplo:** "Abcdefg123"
+
+![alt text](image-69.png)
+
+## **Validación de Contraseña (Contraseña válida)**
+
+**Tipo de prueba:** contraseña que cumple todos los requisitos.
+**Mensaje de error feedback:** No hay mensaje de error feedback, el borde del campo se pone en verde.
+**feedback visual:** Todos los requisitos muestran icono de check verde.
+**feedback estático:** "Mínimo 8 caracteres".
+
+**Ejemplo:** "MiContraseña123!"
+
+![alt text](image-70.png)
+
+# **Pruebas en Confirmación de Contraseña**
+
+## **Validación de Confirmación (Campo vacío)**
+
+**Tipo de prueba:** campo de confirmación vacío.
+**Mensaje de error feedback:** "Debes confirmar tu contraseña".
+**feedback estático:** Campo sin feedback estático específico.
+
+![alt text](image-71.png)
+
+## **Validación de Confirmación (No coincide)**
+
+**Tipo de prueba:** confirmación no coincide con la contraseña.
+**Mensaje de error feedback:** "Las contraseñas no coinciden".
+**feedback estático:** Campo sin feedback estático específico.
+
+**Ejemplo:** Contraseña: "Wp5FXMiFkvkVnB5!", Confirmación: "jajajajaja"
+
+![alt text](image-72.png)
+
+## **Validación de Confirmación (Coincide)**
+
+**Tipo de prueba:** confirmación coincide exactamente con la contraseña.
+**Mensaje de error feedback:** No hay mensaje de error feedback, el borde del campo se pone en verde.
+**feedback estático:** Campo sin feedback estático específico.
+
+![alt text](image-73.png)
+
+# **Pruebas en Validación Humana (CAPTCHA)**
+
+## **Validación Humana (Campo vacío)**
+
+**Tipo de prueba:** campo de respuesta vacío.
+**Mensaje de error feedback:** "Debes responder la pregunta de seguridad".
+**feedback estático:** "Pregunta simple para prevenir registros automáticos".
+
+![alt text](image-74.png)   
+
+## **Validación Humana (Respuesta incorrecta)**
+
+**Tipo de prueba:** respuesta incorrecta a la pregunta de seguridad.
+**Mensaje de error feedback:** "Respuesta incorrecta. Por favor, intenta nuevamente".
+**feedback estático:** "Pregunta simple para prevenir registros automáticos".
+
+![alt text](image-75.png)
+
+## **Validación Humana (Respuesta correcta - número)**
+
+**Tipo de prueba:** respuesta correcta 12 en numero.
+**Mensaje de error feedback:** No hay mensaje de error feedback, el borde del campo se pone en verde.
+**feedback estático:** "Pregunta simple para prevenir registros automáticos".
+
+**Ejemplo:** Pregunta: "¿Cuánto es 5 + 4?" → Respuesta: "9"
+
+![alt text](image-76.png)
+
+# **Pruebas en Términos y Condiciones**
+
+## **Validación de Términos (No aceptados)**
+
+**Tipo de prueba:** checkbox de términos no marcado.
+**Mensaje de error feedback:** "Debes aceptar los términos y condiciones".
+**feedback estático:** Checkbox con etiqueta clara.
+
+![alt text](image-77.png)
+
+## **Validación de Términos (Aceptados)**
+
+**Tipo de prueba:** checkbox de términos marcado.
+**Mensaje de error feedback:** No hay mensaje de error feedback.
+**feedback visual:** Checkbox marcado con check.
+
+![Términos aceptados](image-terms-accepted.png)
+
+# **Pruebas de Integración (Envío del Formulario)**
+
+## **Envío con campos incompletos**
+
+**Tipo de prueba:** intentar enviar formulario con campos incompletos.
+**Comportamiento:** 
+- Se muestran todos los mensajes de error
+- Scroll automático al primer campo con error
+- Foco en el primer campo con error
+- Botón de envío no se procesa
+
+![alt text](image-80.png)
+![alt text](image-81.png)
+![alt text](image-82.png)
+
+## **Envío con campos válidos**
+
+**Tipo de prueba:** enviar formulario con todos los campos válidos.
+**Comportamiento:**
+- Modal de éxito se muestra
+- Cuenta regresiva de 5 segundos
+- Correo del usuario mostrado en el mensaje
+- Opción de continuar inmediatamente
+
+![alt text](image-78.png)
+
+## **Reset del formulario**
+
+**Tipo de prueba:** usar botón "Limpiar formulario".
+**Comportamiento:**
+- Todos los campos se vacían
+- Todos los mensajes de error se ocultan
+- Clases de validación se remueven
+- Barra de fuerza de contraseña se reinicia
+- Nueva pregunta de CAPTCHA generada
+- Foco vuelve al campo de nombre
+
+![alt text](image-79.png)
