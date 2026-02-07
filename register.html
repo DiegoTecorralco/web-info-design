@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Tecommers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+<body class="body">
+    <!-- ================= NAVBAR PRINCIPAL ================= -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 160 120">
+                    <path d="M10 20H80L65 50H45L30 110H10L25 50H10V20Z" fill="#ec1313"/>
+                    <path d="M50 55H78L75 73H47L50 55Z" fill="black"/>
+                    <path d="M43 85H71L68 103H40L43 85Z" fill="#ec1313"/>
+                </svg>
+                <span class="logo-text">TECOMMERS</span>
+            </div>
+
+            <nav class="nav">
+                <a href="homePage.html" class="nav-link">Home</a>
+                <a href="category.html" class="nav-link">Categorías</a>
+                <a href="offer.html" class="nav-link">Ofertas</a>
+                <a href="ourServices.html" class="nav-link">Servicios</a>
+                <a href="our.html" class="nav-link">Nosotros</a>
+            </nav>
+
+            <div class="icon-container">
+                <button class="icon-button">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </button>
+                <a class="icon-button" href="register.html">
+                    <span class="material-symbols-outlined">person</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- ================= FIN NAVBAR ================= -->
+
+    <!-- ================= CONTENIDO PRINCIPAL ================= -->
+    <main class="offers-main">
+        <div class="offers-header">
+            <h1 class="offers-title">Registro</h1>
+            <p class="offers-subtitle">Únete a nuestra comunidad y descubre las mejores ofertas</p>
+        </div>
+
+        <!-- Contenedor del formulario -->
+        <div class="register-container">
+            <form id="registerForm" class="register-form" novalidate>
+                <!-- Sección 1: Información personal -->
+                <div class="form-section">
+                    <h2 class="section-title">
+                        <span class="material-symbols-outlined section-icon">person</span>
+                        Información personal
+                    </h2>
+                    
+                    <div class="form-group">
+                        <label for="nombre" class="form-label">Nombre completo *</label>
+                        <input type="text" 
+                               id="nombre" 
+                               name="nombre" 
+                               class="form-input"
+                               required 
+                               minlength="3" 
+                               maxlength="50"
+                               placeholder="Ej: María González López"
+                               autocomplete="name">
+                        <div class="error-message" id="error-nombre"></div>
+                        <small class="form-hint">Mínimo 3 caracteres</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Correo electrónico *</label>
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               class="form-input"
+                               required 
+                               placeholder="ejemplo@correo.com"
+                               autocomplete="email">
+                        <div class="error-message" id="error-email"></div>
+                        <small class="form-hint">Usaremos este correo para notificaciones</small>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefono" class="form-label">Teléfono *</label>
+                            <input type="tel" 
+                                   id="telefono" 
+                                   name="telefono" 
+                                   class="form-input"
+                                   required 
+                                   pattern="[0-9]{10}"
+                                   placeholder="1234567890"
+                                   autocomplete="tel">
+                            <div class="error-message" id="error-telefono"></div>
+                            <small class="form-hint">10 dígitos sin espacios</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fechaNacimiento" class="form-label">Fecha de nacimiento *</label>
+                            <input type="date" 
+                                   id="fechaNacimiento" 
+                                   name="fechaNacimiento" 
+                                   class="form-input"
+                                   required
+                                   max="2006-12-31">
+                            <div class="error-message" id="error-fechaNacimiento"></div>
+                            <small class="form-hint">Debes ser mayor de 18 años</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 2: Credenciales de acceso -->
+                <div class="form-section">
+                    <h2 class="section-title">
+                        <span class="material-symbols-outlined section-icon">lock</span>
+                        Credenciales de acceso
+                    </h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password" class="form-label">Contraseña *</label>
+                            <div class="password-container">
+                                <input type="password" 
+                                       id="password" 
+                                       name="password" 
+                                       class="form-input"
+                                       required 
+                                       minlength="8"
+                                       placeholder="Mínimo 8 caracteres"
+                                       autocomplete="new-password">
+                                <button type="button" class="toggle-password" data-target="password">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                            </div>
+                            <div class="error-message" id="error-password"></div>
+                            <div class="password-strength">
+                                <div class="strength-bar"></div>
+                                <span class="strength-text">Seguridad de la contraseña</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword" class="form-label">Confirmar contraseña *</label>
+                            <div class="password-container">
+                                <input type="password" 
+                                       id="confirmPassword" 
+                                       name="confirmPassword" 
+                                       class="form-input"
+                                       required 
+                                       minlength="8"
+                                       placeholder="Repite tu contraseña"
+                                       autocomplete="new-password">
+                                <button type="button" class="toggle-password" data-target="confirmPassword">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                            </div>
+                            <div class="error-message" id="error-confirmPassword"></div>
+                        </div>
+                    </div>
+
+                    <div class="password-requirements">
+                        <p class="requirements-title"><strong>Tu contraseña debe incluir:</strong></p>
+                        <ul class="requirements-list">
+                            <li class="requirement-item" data-rule="length">
+                                <span class="material-symbols-outlined requirement-icon">cancel</span>
+                                Al menos 8 caracteres
+                            </li>
+                            <li class="requirement-item" data-rule="uppercase">
+                                <span class="material-symbols-outlined requirement-icon">cancel</span>
+                                Una letra mayúscula
+                            </li>
+                            <li class="requirement-item" data-rule="lowercase">
+                                <span class="material-symbols-outlined requirement-icon">cancel</span>
+                                Una letra minúscula
+                            </li>
+                            <li class="requirement-item" data-rule="number">
+                                <span class="material-symbols-outlined requirement-icon">cancel</span>
+                                Un número
+                            </li>
+                            <li class="requirement-item" data-rule="special">
+                                <span class="material-symbols-outlined requirement-icon">cancel</span>
+                                Un carácter especial (@$!%*?&)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sección 3: Verificación humana -->
+                <div class="form-section">
+                    <h2 class="section-title">
+                        <span class="material-symbols-outlined section-icon">verified</span>
+                        Verificación de seguridad
+                    </h2>
+                    
+                    <div class="verificacion-container">
+                        <label for="captcha" class="captcha-label">
+                            Para confirmar que no eres un robot: ¿Cuánto es 7 + 5? *
+                        </label>
+                        <input type="number" 
+                               id="captcha" 
+                               name="captcha" 
+                               class="form-input"
+                               required
+                               placeholder="Escribe la respuesta">
+                        <div class="error-message" id="error-captcha"></div>
+                        <small class="form-hint">Pregunta simple para prevenir registros automáticos</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" 
+                                   id="terminos" 
+                                   name="terminos" 
+                                   required>
+                            <span class="checkmark"></span>
+                            <span class="checkbox-label">
+                                Acepto los <a href="#" class="link">Términos y Condiciones</a> y la <a href="#" class="link">Política de Privacidad</a> *
+                            </span>
+                        </label>
+                        <div class="error-message" id="error-terminos"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" 
+                                   id="newsletter" 
+                                   name="newsletter">
+                            <span class="checkmark"></span>
+                            <span class="checkbox-label">
+                                Sí, quiero recibir ofertas exclusivas y novedades por correo electrónico
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="form-actions">
+                    <button type="submit" class="product-button" id="submitBtn">
+                        <span class="material-symbols-outlined btn-icon">person_add</span>
+                        Crear cuenta
+                    </button>
+                    
+                    <button type="button" class="btn-secondary" id="resetBtn">
+                        <span class="material-symbols-outlined btn-icon">restart_alt</span>
+                        Limpiar formulario
+                    </button>
+                    
+                    <div class="login-link">
+                        ¿Ya tienes una cuenta? <a href="login.html" class="link">Inicia sesión aquí</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Mensaje de éxito -->
+        <div class="success-message" id="successMessage" style="display: none;">
+            <div class="no-results-content">
+                <span class="material-symbols-outlined">check_circle</span>
+                <h3>¡Cuenta creada exitosamente!</h3>
+                <p>Te hemos enviado un correo de confirmación a <strong id="successEmail"></strong></p>
+                <p>Redirigiendo a tu cuenta en <span id="countdown">5</span> segundos...</p>
+                <button class="clear-search-btn" id="continueBtn">Continuar ahora</button>
+            </div>
+        </div>
+
+        <div class="offers-catalog-button-container">
+            <button class="offers-catalog-button" onclick="window.location.href='homePage.html'">
+                Volver al inicio
+            </button>
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="offers-footer">
+        <div class="offers-footer-content">
+            <div class="offers-footer-section">
+                <div class="offers-footer-logo">
+                    <div class="offers-logo-graphic">
+                        <div class="logo-red-bar"></div>
+                        <div class="logo-black-bar"></div>
+                        <div class="logo-red-bar-bottom"></div>
+                        <div class="logo-red-vertical"></div>
+                    </div>
+                    <span class="offers-footer-logo-text">TECOMMERS</span>
+                </div>
+                <p class="offers-footer-description">
+                    Tu tienda online de confianza para todas tus necesidades.
+                </p>
+            </div>
+            <div class="offers-footer-section">
+                <h4 class="offers-footer-heading">Ayuda</h4>
+                <ul class="offers-footer-links">
+                    <li><a class="offers-footer-link" href="#">Centro de ayuda</a></li>
+                    <li><a class="offers-footer-link" href="#">Contacto</a></li>
+                    <li><a class="offers-footer-link" href="#">Guía de compra</a></li>
+                </ul>
+            </div>
+            <div class="offers-footer-section">
+                <h4 class="offers-footer-heading">Legal</h4>
+                <ul class="offers-footer-links">
+                    <li><a class="offers-footer-link" href="#">Términos y condiciones</a></li>
+                    <li><a class="offers-footer-link" href="#">Política de privacidad</a></li>
+                    <li><a class="offers-footer-link" href="#">Aviso legal</a></li>
+                </ul>
+            </div>
+            <div class="offers-footer-section">
+                <h4 class="offers-footer-heading">Newsletter</h4>
+                <div class="newsletter-box">
+                    <input class="newsletter-input" placeholder="Email" type="email"/>
+                    <button class="newsletter-submit">UNIRSE</button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-footer-bottom">
+            <p class="offers-footer-copyright">© 2024 Tecommers. Todos los derechos reservados.</p>
+            <div class="offers-footer-bottom-links">
+                <a class="offers-footer-bottom-link" href="#">Privacidad</a>
+                <a class="offers-footer-bottom-link" href="#">Términos</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de éxito -->
+    <div class="success-modal" id="successModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <span class="material-symbols-outlined">check_circle</span>
+            </div>
+            <h3 class="modal-title">¡Cuenta creada exitosamente!</h3>
+            <p class="modal-message">
+                Te hemos enviado un correo de confirmación a <strong id="successEmail"></strong>
+            </p>
+            <p class="modal-countdown">
+                Redirigiendo a tu cuenta en <span id="countdown">5</span> segundos...
+            </p>
+            <div class="modal-actions">
+                <button class="product-button" id="continueBtn">
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                    Continuar ahora
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="register.js"></script>
+</body>
+</html>

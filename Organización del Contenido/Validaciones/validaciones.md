@@ -1,4 +1,4 @@
-## **1. Campos Seleccionados para Validación**
+## **Campos Seleccionados para Validación**
 
 Campo	Tipo	Descripción
 Email	Formato específico	Dirección de correo electrónico válida
@@ -40,11 +40,12 @@ Nombre completo	Obligatorio	Campo requerido
 
 ### **Nombre completo**
 - **Obligatorio**: No puede estar vacío
-- **Longitud mínima**: 2 caracteres
+- **Longitud mínima**: 3 caracteres
 - **Longitud máxima**: 50 caracteres
 - **Formato**: Solo letras y espacios
+- **Inválido**: Números, caracteres especiales
 
-## **3. Mensajes de Error Específicos**
+## **Mensajes de Error Específicos**
 
 ### **Email**
 - **Campo vacío**: "El correo electrónico es obligatorio"
