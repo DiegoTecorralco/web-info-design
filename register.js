@@ -97,16 +97,60 @@ class TecommersRegister {
                     clearTimeout(timeout);
                     
                     timeout = setTimeout(() => {
-                        // Si hay algún número, mostrar error y quitar clase 'valid'
+                        // Validar longitud mínima
+                        if (value.length > 0 && value.length < 2) {
+                            this.showError('nombre', 'El nombre debe tener al menos 2 caracteres');
+                            input.classList.remove('valid');
+                            input.classList.add('invalid');
+                            return;
+                        }
+                        
+                        // Si hay algún número, mostrar error
                         if (/\d/.test(value)) {
                             this.showError('nombre', 'El nombre no puede contener números');
                             input.classList.remove('valid');
                             input.classList.add('invalid');
-                        } else if (value.length >= 3 && !/\d/.test(value)) {
-                            this.validateNombre(value);
-                        } else if (value.length < 3) {
+                            return;
+                        }
+                        
+                        // Validar si tiene espacio pero no suficiente texto después
+                        if (/\s/.test(value)) {
+                            const partes = value.split(' ');
+                            const ultimaParte = partes[partes.length - 1];
+                            
+                            // Si tiene espacio pero la última parte es muy corta
+                            if (ultimaParte && ultimaParte.length < 2 && ultimaParte.length > 0) {
+                                this.showError('nombre', 'Debe haber al menos 2 letras después del espacio');
+                                input.classList.remove('valid');
+                                input.classList.add('invalid');
+                                return;
+                            }
+                            
+                            // Si hay solo espacio sin nada después
+                            if (ultimaParte === '') {
+                                this.showError('nombre', 'Debe escribir algo después del espacio');
+                                input.classList.remove('valid');
+                                input.classList.add('invalid');
+                                return;
+                            }
+                        }
+                        
+                        // Si pasa todas las validaciones básicas, validar completo
+                        if (value.length >= 2 && !/\d/.test(value)) {
+                            // Solo hacer validación completa si hay más de 2 caracteres
+                            if (value.length >= 3) {
+                                this.validateNombre(value);
+                            } else {
+                                // Limpiar errores si es válido básicamente
+                                this.hideError('nombre');
+                                input.classList.remove('invalid');
+                                input.classList.remove('valid');
+                            }
+                        } else if (value.length === 0) {
+                            // Limpiar todo si está vacío
                             input.classList.remove('valid');
                             input.classList.remove('invalid');
+                            this.hideError('nombre');
                         }
                     }, 300);
                 });
@@ -371,45 +415,95 @@ class TecommersRegister {
     }
     
     validateNombre(value) {
-        const nombreInput = document.getElementById('nombre');
-        
-        if (!value) {
-            this.showError('nombre', 'El nombre completo es obligatorio');
-            nombreInput.classList.remove('valid');
-            return false;
-        }
-        
-        if (value.length < 2) {
-            this.showError('nombre', 'El nombre debe tener al menos 2 caracteres');
-            nombreInput.classList.remove('valid');
-            return false;
-        }
-        
-        if (value.length > 50) {
-            this.showError('nombre', 'El nombre debe tener máximo 50 caracteres');
-            nombreInput.classList.remove('valid');
-            return false;
-        }
-        
-        // Verificar si hay números en el nombre
-        if (/\d/.test(value)) {
-            this.showError('nombre', 'Solo se permiten letras y espacios');
-            nombreInput.classList.remove('valid');
-            return false;
-        }
-        
-        // Verificar si hay caracteres especiales no permitidos
-        if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(value)) {
-            this.showError('nombre', 'Solo se permiten letras y espacios');
-            nombreInput.classList.remove('valid');
-            return false;
-        }
-        
-        this.hideError('nombre');
-        nombreInput.classList.remove('invalid');
-        nombreInput.classList.add('valid');
-        return true;
+    const nombreInput = document.getElementById('nombre');
+    
+    if (!value) {
+        this.showError('nombre', 'El nombre completo es obligatorio');
+        nombreInput.classList.remove('valid');
+        return false;
     }
+    
+    if (value.length < 2) {
+        this.showError('nombre', 'El nombre debe tener al menos 2 caracteres');
+        nombreInput.classList.remove('valid');
+        nombreInput.classList.add('invalid');
+        return false;
+    }
+    
+    if (value.length > 50) {
+        this.showError('nombre', 'El nombre debe tener máximo 50 caracteres');
+        nombreInput.classList.remove('valid');
+        return false;
+    }
+    
+    // Verificar si hay números en el nombre
+    if (/\d/.test(value)) {
+        this.showError('nombre', 'Solo se permiten letras y espacios');
+        nombreInput.classList.remove('valid');
+        return false;
+    }
+    
+    // Verificar si hay caracteres especiales no permitidos
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(value)) {
+        this.showError('nombre', 'Solo se permiten letras y espacios');
+        nombreInput.classList.remove('valid');
+        return false;
+    }
+    
+    // NUEVA VALIDACIÓN: Si contiene un espacio, debe haber letras después
+    if (/\s/.test(value)) {
+        const partes = value.split(' ');
+        const ultimaParte = partes[partes.length - 1];
+        
+        // Si la última parte después del espacio está vacía o tiene menos de 2 caracteres
+        if (ultimaParte.length < 2) {
+            this.showError('nombre', 'Debe haber al menos 2 letras después del espacio');
+            nombreInput.classList.remove('valid');
+            nombreInput.classList.add('invalid');
+            return false;
+        }
+        
+        // También verificar si hay solo espacios en blanco al final
+        if (value.trim() !== value) {
+            this.showError('nombre', 'No se permiten espacios al inicio o al final');
+            nombreInput.classList.remove('valid');
+            nombreInput.classList.add('invalid');
+            return false;
+        }
+    }
+    
+    // NUEVA VALIDACIÓN: Para nombre completo (nombre y apellido)
+    if (!/\s/.test(value)) {
+        this.showError('nombre', 'Por favor, ingresa nombre y apellido completos');
+        nombreInput.classList.remove('valid');
+        nombreInput.classList.add('invalid');
+        return false;
+    }
+    
+    // Validar que haya al menos un espacio y mínimo 2 partes
+    const partesNombre = value.trim().split(/\s+/);
+    if (partesNombre.length < 2) {
+        this.showError('nombre', 'Ingresa nombre y apellido completos');
+        nombreInput.classList.remove('valid');
+        nombreInput.classList.add('invalid');
+        return false;
+    }
+    
+    // Validar que cada parte tenga al menos 2 caracteres
+    for (let parte of partesNombre) {
+        if (parte.length < 2) {
+            this.showError('nombre', 'Cada parte del nombre debe tener al menos 2 letras');
+            nombreInput.classList.remove('valid');
+            nombreInput.classList.add('invalid');
+            return false;
+        }
+    }
+    
+    this.hideError('nombre');
+    nombreInput.classList.remove('invalid');
+    nombreInput.classList.add('valid');
+    return true;
+}
     
     validateEmail(value) {
         const emailInput = document.getElementById('email');
