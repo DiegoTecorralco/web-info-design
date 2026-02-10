@@ -329,7 +329,7 @@
 **Mensaje de error feedback:** No hay mensaje de error feedback.
 **feedback visual:** Checkbox marcado con check.
 
-![Términos aceptados](image-terms-accepted.png)
+![alt text](image-83.png)
 
 # **Pruebas de Integración (Envío del Formulario)**
 

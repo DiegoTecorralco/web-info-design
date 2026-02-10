@@ -78,16 +78,15 @@ Nombre completo	Obligatorio	Campo requerido
 
 **Implementación**:
 ```
-[ ] No soy un robot
-Pregunta de seguridad: ¿Cuál es el resultado de 7 + 3?
+
+Pregunta de seguridad: ¿Cuál es el resultado de 5 + 7?
 [________] (campo para respuesta)
 ```
 
 **Preguntas alternativas** (selección aleatoria):
-1. "¿Cuántos días tiene una semana?" → **7**
-2. "¿Cuánto es 5 + 4?" → **9**
-3. "¿Qué animal dice 'miau'?" → **gato**
-4. "¿De qué color es el sol?" → **amarillo**
+1. "¿Cuántos lados tiene un triangulo?" → **3**
+2. "¿Cuánto es 5 + 7?" → **12**
+
 
 **Validación**:
 - Respuesta en minúsculas/MAYÚSCulas aceptada
